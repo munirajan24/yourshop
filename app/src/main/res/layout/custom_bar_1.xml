@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ms_white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ActionBarStyle"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:menu="@menu/home"
+        app:navigationIcon="@drawable/ic_close"
+        app:subtitle="sub title"
+        app:title="My Cart"
+        app:titleTextColor="@color/ms_white"
+        app:subtitleTextColor="@color/ms_white"/>
+
+    <View
+        android:id="@+id/d"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/t_bar"
+        android:background="@drawable/divider_inner" />
+
+</com.google.android.material.appbar.AppBarLayout>

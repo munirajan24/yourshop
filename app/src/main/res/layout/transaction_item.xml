@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/space_4">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_"
+        android:layout_width="40dp"
+        android:layout_height="55dp"
+        android:padding="@dimen/space_4"
+        android:src="@drawable/check" />
+
+    <TextView
+        android:id="@+id/trans_product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="1dp"
+        android:layout_toEndOf="@+id/img_"
+        android:padding="@dimen/space_2"
+        android:textColor="@color/ms_black_87_opacity"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/trans_product_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trans_product_name"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="1dp"
+        android:layout_toEndOf="@+id/img_"
+        android:padding="@dimen/space_2"
+        android:textColor="@color/ms_black_38_opacity"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/trans_product_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trans_product_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="1dp"
+        android:layout_toEndOf="@+id/trans_product_qty"
+        android:gravity="right"
+        android:padding="@dimen/space_2"
+        android:textColor="@color/ms_black_87_opacity"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_below="@+id/trans_product_price"/>
+
+
+</RelativeLayout>

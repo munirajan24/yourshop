@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/ms_white"
+
+        app:cardCornerRadius="@dimen/space_1"
+        app:cardElevation="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:strokeColor="@color/md_grey_100"
+        app:strokeWidth="@dimen/space_1">
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/mobile_navigation" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/ms_white"
+        android:elevation="0dp"
+        app:layout_insetEdge="bottom"
+        app:mbn_backgroundBottomColor="@color/md_blue_grey_50"
+        app:mbn_circleColor="@color/sl_green_light"
+        app:mbn_countBackgroundColor="#ff6f00"
+        app:mbn_countTextColor="#ffffff"
+        app:mbn_countTypeface="fonts/SourceSansPro-Regular.ttf"
+        app:mbn_defaultIconColor="@color/md_blue_grey_500"
+        app:mbn_rippleColor="#2f424242"
+        app:mbn_selectedIconColor="@color/ms_white"
+        app:mbn_shadowColor="#00212121" />
+
+</RelativeLayout>

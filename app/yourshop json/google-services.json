@@ -1,0 +1,1026 @@
+{
+  "project_info": {
+    "project_number": "835552467506",
+    "firebase_url": "https://yourshop-aeb5b.firebaseio.com",
+    "project_id": "yourshop-aeb5b",
+    "storage_bucket": "yourshop-aeb5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:0f9c93b51d13276642fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.a1restaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-a5ebvook6717275rcpa3tehi345gjmjl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.a1restaurant",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:333e79969554601742fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.almaasbiriyanihouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-l65quu2k84qqmsiebvfs4c7gtm1gbtqp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.almaasbiriyanihouse",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:3f51bfba3436e6ec42fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.ancientvillagerestaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-03lph6t4ps9mgorji94kceaui8dir5sn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.ancientvillagerestaurant",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:a132dd0abfef06c142fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.brightmultiservice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-okohupsgcun6uc0i6le0qcgs8gk0f89s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.brightmultiservice",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:f26b772ddada9b8142fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.burgersquare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-euq9i4m7drmt9pfc5kj0ereqn1ppii4l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.burgersquare",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:e60878b45175667442fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.burmabhai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-8b5oqc6061n8cmrlsqgco1thlcf6q3vv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.burmabhai",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:8a25dc50e198120c42fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.chennaisbriyanihouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-utcp6p6u6biqcespo7jo4pg01r3pvmah.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.chennaisbriyanihouse",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:683d5c2028f5a80642fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.deliverystaff"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-0lp6b54ce256288or95kbsb1jdudgchc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.deliverystaff",
+            "certificate_hash": "4a488879d3b10450810f07d312224c9ac1c4cbda"
+          }
+        },
+        {
+          "client_id": "835552467506-g7gf09nuqq5umh5jj33tc24jelb7r2g5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.deliverystaff",
+            "certificate_hash": "aa7b5b307cd42c0cc5de0ea7b6a46bbe1ee6b51f"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:571203a1e75c079342fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.duraissupermarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-57sar6kmsj076vtqop060ifri8r07rt8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.duraissupermarket",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:ba354221e95a98c242fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.gandhipuramoriginallalasweets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-vi0v8o7t9f9sd6chaqebgt70aib7hlmu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.gandhipuramoriginallalasweets",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:f7acd66fbaafa73b42fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.haryanadhabarestaurantandbakes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-vapmrbdl2dr15uiaivblnfebjhe8dchi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.haryanadhabarestaurantandbakes",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:8873a01b4db8031542fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.hotelmaharajakidavirunthu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-nqgclrl8uoe2vrv4rtofa8rnbgoe7mm4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.hotelmaharajakidavirunthu",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:d14b602b09ebb20f42fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.hotelyours"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-mlocj6hf4d0s9ru347vmmeogedadju5r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.hotelyours",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:9286db4c0e11c18442fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.iftharmulticuisinerestaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-g4bpto1emhgot82l9ptr1pauqi497r1c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.iftharmulticuisinerestaurant",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:8f1c7b978e6f0bc642fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.kcmchettinadrestaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-22clanoi9jn9vdo7m50gl4i7fiiebuam.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.kcmchettinadrestaurant",
+            "certificate_hash": "56a3ec19a2dddcd8a5e28b4e777eb9ac0dcbaf3b"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:0624207a9731d52942fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.kootansoru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-fo09kedtlgkknl51oa62j4neh27i6k69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.kootansoru",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:b25fd910aadd599242fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.kovaipresidentbiriyani"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-jdnr988f7fksnlpj46qpg79u3ilvfiu9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.kovaipresidentbiriyani",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:70419f65915829ff42fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.lakshmimess"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-te09maqlol6j4ikjhrpavc32s71tkt7e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.lakshmimess",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:cfe64d09529478fc42fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.lunchbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-fh4l80mgfmpq8qeivol6sf1044ah0tci.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.lunchbox",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:d48b1ed25c145f8a42fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.mhrbiriyanihouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-cu3368uh7tsna5tj5l1m88i405bonekd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.mhrbiriyanihouse",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:77e59ed461ada53042fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.rhrpurevegrestaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-cckt18vac7i0f2kvav53crgupj0gn7tj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.rhrpurevegrestaurant",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:3d333821569b95cb42fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.shreeaksshayam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-5b4sgpsnrr0cuu9hpqdr30mttb3nvmcc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.shreeaksshayam",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:c8c9ef615b27388542fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.sivakannanrestaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-ch413qob2pfnmrtngpemapnifgoes5fb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.sivakannanrestaurant",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:5e872a5eb5296ec742fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.srivelanchettinadmess"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-nk1vc0s9dv0s3n9foelqckca6iqk26rg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.srivelanchettinadmess",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:178bd9b0eb91d10342fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.srkpchettinadmess"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-ve52cv10l754aavi38j0blc53sb8vfn0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.srkpchettinadmess",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:4d0542185f26f29742fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.sshotel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-93knkvoleqpmr734uhppkj9cpikfh5q3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.sshotel",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835552467506:android:0cd1ee6743a74d5842fa2b",
+        "android_client_info": {
+          "package_name": "com.dvishapps.yourshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835552467506-e08evuoaa9oh55k3nr1s91nog6ose4gv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.yourshop",
+            "certificate_hash": "cbbc6a4ae646e19552d414c4f32f3584440dec81"
+          }
+        },
+        {
+          "client_id": "835552467506-kb5k0admekl79lb1si73dgtmceh49hss.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvishapps.yourshop",
+            "certificate_hash": "4a488879d3b10450810f07d312224c9ac1c4cbda"
+          }
+        },
+        {
+          "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-EOQpw5chkCe0Qkorw0CtcPMXEGFB9po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835552467506-tf3u45s6i3v23u0reda0m3ebgmqgcdld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

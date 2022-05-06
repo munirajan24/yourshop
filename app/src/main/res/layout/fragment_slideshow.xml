@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/slide_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ms_white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/slide_cate_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ms_white"
+        android:contentDescription="helll"
+        android:src="@drawable/border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/slideshow_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="120dp"
+        android:background="@color/transparent_60"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/slide_cate_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/space_5"
+            android:layout_marginTop="@dimen/space_5"
+            android:layout_marginEnd="@dimen/space_5"
+            android:text="Name"
+            android:textColor="@color/ms_white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/slide_cate_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_5"
+            android:layout_marginEnd="@dimen/space_5"
+            android:layout_marginTop="@dimen/space_5"
+            android:layout_below="@id/slide_cate_title"
+            android:gravity="center_vertical"
+            android:text="Price"
+            android:layout_marginBottom="@dimen/space_20"
+            android:textColor="@color/ms_white"
+            android:textSize="15sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@id/slide_cate_price"
+            android:theme="@style/RatingBar" />
+
+        <TextView
+            android:id="@+id/slide_cate_ratings_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@id/ratingBar"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textColor="@color/md_grey_400"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

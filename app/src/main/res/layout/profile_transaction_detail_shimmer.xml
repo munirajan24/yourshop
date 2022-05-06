@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.dvishapps.yourshop.utils.StringUtil" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isLoading"
+            type="boolean" />
+
+        <variable
+            name="transaction"
+            type="com.dvishapps.yourshop.models.Transaction" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_order_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_2">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/pb"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/orangeBackground"
+                android:indeterminateTintMode="src_atop"
+                android:progress="50"
+                android:progressTint="@color/md_deep_orange_A200"
+                android:secondaryProgressTint="@color/md_blue_grey_400"
+                android:visibility="@{isLoading ? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/pb"
+                app:shimmer_duration="800">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <include
+                        layout="@layout/fragment_slideshow_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pb">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/trans"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_5"
+                    app:cardCornerRadius="@dimen/space_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/md_grey_100"
+                    app:strokeWidth="@dimen/space_1">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/lnr_bill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/space_8">
+
+                            <ImageView
+                                android:id="@+id/imageView5"
+                                android:layout_width="@dimen/space_24"
+                                android:layout_height="@dimen/space_24"
+                                android:contentDescription="@string/image_default_image"
+                                android:src="@color/shimmer_grey"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/Text_style"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_8"
+                                android:layout_marginEnd="@dimen/space_5"
+                                android:background="@color/shimmer_grey"
+                                android:padding="@dimen/space_3"
+                                android:text="@{StringUtil.setString(@string/transaction__number, transaction.trans_code)}"
+                                android:textColor="@color/shimmer_grey"
+                                android:textSize="@dimen/font_body_size"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/copy_btn"
+                                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/copy_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/image_default_image"
+                                android:src="@drawable/baseline_copy_grey_24"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/divider_inner" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/space_3">
+
+                            <TextView
+                                android:id="@+id/text_amount"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/total_item_count"
+                                android:textColor="@color/shimmer_grey"
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/value_amount"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{transaction.total_item_count != null ? transaction.total_item_count : `-`}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="@{transaction.total_item_count != null ?View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="@+id/text_amount"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/text_amount" />
+
+                            <TextView
+                                android:id="@+id/text_status"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/total"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/text_amount" />
+
+                            <TextView
+                                android:id="@+id/value_status"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{StringUtil.setString(@string/transaction_detail__set_amount,transaction.currency_symbol, transaction.total_item_amount != null ? transaction.total_item_amount : `-`)}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="@{transaction.currency_symbol != null ?View.VISIBLE : View.GONE}"
+
+                                app:layout_constraintBottom_toBottomOf="@+id/text_status"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/text_status" />
+
+                            <TextView
+                                android:id="@+id/text_discount"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/discount"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/text_status" />
+
+                            <TextView
+                                android:id="@+id/value_discount"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{transaction.discount_amount != null ? transaction.discount_amount : `-`}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="@+id/text_discount"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/text_discount" />
+
+                            <TextView
+                                android:id="@+id/text_coupon_discount"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/coupon_discount"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/text_discount" />
+
+                            <TextView
+                                android:id="@+id/value_coupon_discount"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{transaction.coupon_discount_amount != null ? transaction.coupon_discount_amount : `-`}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="@+id/text_coupon_discount"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/text_coupon_discount" />
+
+                            <View
+                                android:id="@+id/v1"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/space_1"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@drawable/divider_inner"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/text_coupon_discount" />
+
+                            <TextView
+                                android:id="@+id/sub_total_text"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/sub_total"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/v1" />
+
+                            <TextView
+                                android:id="@+id/sub_total_value"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{StringUtil.setString(@string/transaction_detail__set_amount,transaction.currency_symbol, transaction.sub_total_amount)}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="@{transaction.currency_symbol != null ?View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="@+id/sub_total_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/sub_total_text" />
+
+                            <TextView
+                                android:id="@+id/tax_text"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="Tax (3%)"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/sub_total_text" />
+
+                            <TextView
+                                android:id="@+id/tax_value"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{StringUtil.setString(@string/transaction_detail__set_amount,transaction.currency_symbol,transaction.tax_amount)}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="@{transaction.currency_symbol != null ?View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="@+id/tax_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/tax_text" />
+
+                            <TextView
+                                android:id="@+id/shipping_cost_text"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/delivery_charges"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tax_text" />
+
+                            <TextView
+                                android:id="@+id/shipping_cost_value"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{StringUtil.setString(@string/transaction_detail__set_amount,transaction.currency_symbol, transaction.shipping_amount)}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="@{transaction.currency_symbol != null ?View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="@+id/shipping_cost_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/shipping_cost_text" />
+
+                            <TextView
+                                android:id="@+id/shipping_tax_text"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{StringUtil.setString(@string/shipping_tax,transaction.shipping_tax_percent)}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/shipping_cost_text" />
+
+                            <TextView
+                                android:id="@+id/shipping_tax_value"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{StringUtil.setString(@string/transaction_detail__set_amount,transaction.currency_symbol,transaction.shipping_amount)}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="@+id/shipping_tax_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/shipping_tax_text" />
+
+                            <View
+                                android:id="@+id/v2"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/space_1"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@drawable/divider_inner"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/shipping_tax_text" />
+
+                            <TextView
+                                android:id="@+id/total_text"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:layout_marginBottom="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/total"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/v2" />
+
+                            <TextView
+                                android:id="@+id/total_value"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{StringUtil.setString(@string/transaction_detail__set_amount,transaction.currency_symbol,transaction.total_item_amount)}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                android:visibility="@{transaction.currency_symbol != null ?View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="@+id/total_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/total_text" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/b_s"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_5"
+                    app:cardCornerRadius="@dimen/space_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/trans"
+                    app:strokeColor="@color/md_grey_100"
+                    app:strokeWidth="@dimen/space_1">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/lnr_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/space_8">
+
+                            <ImageView
+                                android:id="@+id/imageView32"
+                                android:layout_width="@dimen/space_24"
+                                android:layout_height="@dimen/space_24"
+                                android:contentDescription="@string/image_default_image"
+                               android:background="@color/shimmer_grey"
+                                android:src="@color/shimmer_grey"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/Text_style"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_8"
+                                android:layout_marginEnd="@dimen/space_5"
+                                android:background="@color/shimmer_grey"
+                                android:padding="@dimen/space_3"
+                                android:text="@string/checkout__shipping_address"
+                                android:textColor="@color/shimmer_grey"
+                                android:textSize="@dimen/font_body_size"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imageView32"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/divider_inner"
+                            android:visibility="gone" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/space_3">
+
+                            <TextView
+                                android:id="@+id/s_phone_text"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/checkout__phone"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/s_phone_value"
+                                style="@style/Text_style"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{transaction.shipping_phone}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/s_phone_text"
+                                app:layout_constraintTop_toBottomOf="@+id/s_phone_text" />
+
+                            <TextView
+                                android:id="@+id/s_email_text"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/checkout__email"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/s_phone_value" />
+
+                            <TextView
+                                android:id="@+id/s_email_value"
+                                style="@style/Text_style"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{transaction.shipping_email}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/s_email_text"
+                                app:layout_constraintTop_toBottomOf="@+id/s_email_text" />
+
+                            <TextView
+                                android:id="@+id/s_address_text"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/checkout__address"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/s_email_value" />
+
+                            <TextView
+                                android:id="@+id/s_address_value"
+                                style="@style/Text_style"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:layout_marginBottom="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{transaction.shipping_address_2}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/s_address_text"
+                                app:layout_constraintTop_toBottomOf="@+id/s_address_text" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/space_8"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/imageView33"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/image_default_image"
+                                android:src="@drawable/baseline_pin_black_24"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/Text_style"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_8"
+                                android:layout_marginEnd="@dimen/space_5"
+                                android:padding="@dimen/space_3"
+                                android:text="@string/billing_address"
+                                android:textColor="@color/md_grey_900"
+                                android:textSize="@dimen/font_body_size"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imageView33"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/divider_inner" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/space_3"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/b_phone_text"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/checkout__phone"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/b_phone_value"
+                                style="@style/Text_style"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{transaction.billing_phone}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/b_phone_text"
+                                app:layout_constraintTop_toBottomOf="@+id/b_phone_text" />
+
+                            <TextView
+                                android:id="@+id/b_email_text"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/checkout__email"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/b_phone_value" />
+
+                            <TextView
+                                android:id="@+id/b_email_value"
+                                style="@style/Text_style"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{transaction.billing_email}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/b_email_text"
+                                app:layout_constraintTop_toBottomOf="@+id/b_email_text" />
+
+                            <TextView
+                                android:id="@+id/b_address_text"
+                                style="@style/Text_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@string/checkout__address"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/b_email_value" />
+
+                            <TextView
+                                android:id="@+id/b_address_value"
+                                style="@style/Text_style"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:layout_marginBottom="@dimen/space_8"
+                                android:background="@color/shimmer_grey"
+                                android:text="@{transaction.billing_address_1}"
+                                android:textColor="@color/shimmer_grey"
+
+                                android:textSize="@dimen/font_body_size"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/b_address_text"
+                                app:layout_constraintTop_toBottomOf="@+id/b_address_text" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

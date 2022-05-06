@@ -1,0 +1,17 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="me.dm7.barcodescanner.zbar" >
+5
+6    <uses-sdk
+7        android:minSdkVersion="19"
+7-->M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+8        android:targetSdkVersion="29" />
+8-->M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+9
+10    <application tools:overrideLibrary="me.dm7.barcodescanner.core" >
+10-->M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml:5:5-7:19
+10-->M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml:6:9-59
+11    </application>
+12
+13</manifest>

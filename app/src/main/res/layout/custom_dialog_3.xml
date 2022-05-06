@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lnr_root"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_box_blue"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="3dp"
+        android:background="@color/blueBackground"
+        android:visibility="gone"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Message"
+            android:textColor="@color/ms_white"
+            android:textSize="14dp"
+            tools:ignore="HardcodedText,InefficientWeight,SpUsage" />
+
+        <ImageView
+            android:id="@+id/close_img"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/round_cancel"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity="center"
+   android:visibility="gone"
+        android:textColor="@android:color/black"
+        android:textSize="14dp"
+        tools:ignore="SpUsage" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:id="@+id/view_ok"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/blueBackground" />
+
+    <TextView
+        android:id="@+id/dialog_add_more_images"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+
+        android:text="Add image"
+        android:textColor="@color/ms_black"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/blueBackground" />
+    <TextView
+        android:id="@+id/dialog_edit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+
+        android:text="Edit"
+        android:textColor="@color/ms_black"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:id="@+id/view_cancel"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/blueBackground" />
+
+    <TextView
+        android:id="@+id/dialog_delete"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+
+        android:text="Delete"
+        android:textColor="@color/ms_black"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,SpUsage" />
+
+
+</LinearLayout>

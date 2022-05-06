@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="orange_btn_3" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_corner_small</item>
+        <item name="backgroundTint">@color/md_orange_60</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingRight">@dimen/space_4</item>
+        <item name="android:paddingLeft">@dimen/space_4</item>
+        <item name="android:textColor">@color/sl_brown_light</item>
+        <item name="android:layout_marginBottom">@dimen/space_4</item>
+
+        <item name="android:drawableTint">@color/sl_brown_light</item>
+        <item name="android:tint">@color/sl_brown_light</item>
+    </style>
+
+    <style name="add_orange_btn" parent="Widget.AppCompat.Button">
+        <item name="backgroundTint">@color/md_orange_600</item>
+        <item name="elevation">@dimen/space_5</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/font_body_s_size</item>
+        <item name="android:textColor">@color/ms_white</item>
+        <item name="android:padding">@dimen/space_3</item>
+
+        <item name="android:layout_marginBottom">@dimen/space_4</item>
+        <item name="android:layout_marginTop">@dimen/space_4</item>
+        <item name="android:layout_marginStart">@dimen/space_4</item>
+        <item name="android:layout_marginEnd">@dimen/space_4</item>
+        <item name="android:drawableTint">@color/ms_white</item>
+        <item name="android:tint">@color/ms_white</item>
+    </style>
+
+    <style name="danger_btn_3_vertical" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_corner</item>
+        <item name="backgroundTint">@color/md_orange_600</item>
+        <item name="elevation">@dimen/space_5</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/font_body_s_size</item>
+        <item name="android:textColor">@color/ms_white</item>
+        <item name="android:drawableTint">@color/ms_white</item>
+        <item name="android:tint">@color/ms_white</item>
+    </style>
+
+    <style name="danger_btn_4_vertical" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_corner_grey</item>
+        <item name="backgroundTint">@color/shimmer_grey</item>
+        <item name="elevation">@dimen/space_5</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/font_body_s_size</item>
+        <item name="android:textColor">@color/ms_white</item>
+        <item name="android:drawableTint">@color/ms_white</item>
+        <item name="android:tint">@color/ms_white</item>
+    </style>
+
+    <style name="danger_btn_1" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_corner</item>
+        <item name="backgroundTint">@color/md_orange_600</item>
+        <item name="elevation">@dimen/space_5</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/font_body_s_size</item>
+        <item name="android:textColor">@color/ms_white</item>
+        <item name="android:layout_marginBottom">@dimen/space_4</item>
+        <item name="android:layout_marginTop">@dimen/space_4</item>
+        <item name="android:layout_marginStart">@dimen/space_8</item>
+        <item name="android:layout_marginEnd">@dimen/space_8</item>
+        <item name="android:drawableTint">@color/ms_white</item>
+        <item name="android:tint">@color/ms_white</item>
+    </style>
+
+    <style name="orange_btn_2" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_corner_small</item>
+        <item name="backgroundTint">@color/md_orange_60</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingRight">@dimen/space_4</item>
+        <item name="android:paddingLeft">@dimen/space_4</item>
+        <item name="android:textColor">@color/sl_brown_light</item>
+        <item name="android:layout_marginBottom">@dimen/space_4</item>
+        <item name="android:layout_marginTop">@dimen/space_4</item>
+        <item name="android:drawableTint">@color/sl_brown_light</item>
+        <item name="android:tint">@color/sl_brown_light</item>
+    </style>
+</resources>

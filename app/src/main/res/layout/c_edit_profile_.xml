@@ -1,0 +1,1523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currentUser"
+            type="com.dvishapps.yourshop.models.User" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrl_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/md_grey_100"
+                android:paddingBottom="@dimen/space_16"
+                tools:context=".ui.layout.profile.EditProfileFragment">
+
+                <ImageView
+                    android:id="@+id/userCoverImageView"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/image_default__image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_profile"
+                    app:img_name="@{currentUser.user_cover_photo}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/userCoverBlurImageView"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/image_default__image"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/blur"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="100dp"
+                    android:contentDescription="@string/image_default__image"
+                    android:src="@drawable/default_profile"
+                    app:img_name="@{currentUser.user_profile_photo}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/userCoverBlurImageView" />
+
+                <ImageView
+                    android:id="@+id/edit_image_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/ms_circle"
+                    android:contentDescription="@string/image_default__image"
+                    android:padding="@dimen/space_5"
+                    android:src="@android:drawable/ic_menu_edit"
+                    app:layout_constraintEnd_toEndOf="@+id/profileImageView"
+                    app:layout_constraintTop_toTopOf="@+id/profileImageView"
+                    app:srcCompat="@android:drawable/ic_menu_edit" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/userCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_8"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profileImageView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/nameTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:text="@string/edit_profile__user_name"
+                            android:textColor="@color/text__primary"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="@string/edit_profile__user_name" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_name_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:hint="@string/edit_profile__user_name"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/nameTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={currentUser.user_name}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/emailTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:text="@string/edit_profile__email"
+                            android:textColor="@color/text__primary"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_name_"
+                            tools:text="@string/edit_profile__email" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_email_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:hint="@string/edit_profile__email"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/emailTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={currentUser.user_email}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/phoneTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:text="@string/edit_profile__phone"
+                            android:textColor="@color/text__primary"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_email_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_phone_layout"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:hint="@string/edit_profile__phone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/phoneTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/space_16"
+                                android:text="@={currentUser.user_phone}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/aboutMeTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:text="@string/edit_profile__about_me"
+                            android:textColor="@color/text__primary"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_phone_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_about_"
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/edit_profile__about_me"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/aboutMeTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_about"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={currentUser.user_phone}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/location_CardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_8"
+                    app:cardCornerRadius="@dimen/space_4"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userCardView">
+
+                    <LinearLayout
+                        android:id="@+id/lnr_address_request"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/space_16"
+                        android:layout_marginEnd="@dimen/space_16"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/userAboutMeEditText">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Delivery at"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/txt_your_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_16"
+                            android:text="Your location"
+                            android:textColor="@color/md_grey_500"
+                            android:textStyle="bold" />
+
+
+                        <LinearLayout
+                            android:id="@+id/lnr_get_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/space_5"
+                            android:layout_marginTop="@dimen/space_16"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/txt_map_address"
+                                style="@style/txt_custom_style_large"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".7"
+                                android:drawableStart="@drawable/ic_location"
+                                android:drawablePadding="@dimen/space_5"
+                                android:text="Use current location" />
+
+
+                            <TextView
+                                android:id="@+id/txt_change_address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".3"
+                                android:gravity="center"
+                                android:text="Get Location"
+                                android:textAllCaps="true"
+                                android:textColor="@color/orangeBackground"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/shippingCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_8"
+
+                    android:layout_marginEnd="@dimen/space_8"
+                    app:cardCornerRadius="@dimen/space_4"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/location_CardView"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txt_change_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:gravity="center"
+                                android:text="Get Location"
+                                android:textAllCaps="true"
+                                android:textColor="@color/orangeBackground"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_address2TitleTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_toStartOf="@id/txt_change_location"
+                                android:text="@string/complete_address"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text__primary"
+                                android:textSize="@dimen/font_body_s_size" />
+                        </RelativeLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/edt_user_shipping_address2_layout"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/complete_address"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/address1TitleTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_user_shipping_address2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/space_32"
+                                android:gravity="top"
+                                android:lines="4"
+                                android:maxLines="4"
+                                android:text="@={currentUser.shipping_address_2}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/space_32"
+                        android:visibility="gone"
+                        android:background="@color/md_white_1000"
+                        app:layout_constraintTop_toBottomOf="@+id/userAboutMeEditText">
+
+                        <TextView
+                            android:id="@+id/sortByTextView2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/address"
+                            android:textAlignment="viewStart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_title_size"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/lastNameTitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/last_name"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_shipping_first_name_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+
+                            android:id="@+id/user_shipping_last_name_"
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/last_name"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lastNameTitleTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_shipping_last_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.shipping_last_name}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/firstNameTitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/first_name"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/sortByTextView2" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+
+                            android:id="@+id/user_shipping_first_name_"
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/first_name"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/firstNameTitleTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_shipping_first_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.shipping_first_name}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/emailTitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/email"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_shipping_last_name_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_shipping_email_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/email"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/emailTitleTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_shipping_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.shipping_email}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/phoneTitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/checkout__phone"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_shipping_email_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+
+                            android:id="@+id/user_shipping_phone_"
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/phone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/phoneTitleTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_shipping_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.shipping_phone}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/companyTitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/company"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_shipping_phone_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_shipping_company_"
+                            style="@style/md_input"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/company"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/companyTitleTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_shipping_company"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.shipping_company}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/address1TitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/address"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_shipping_company_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_shipping_address1_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/address"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/address1TitleTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_shipping_address1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top"
+                                android:lines="4"
+                                android:maxLines="4"
+                                />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/memoTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/address_2"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_shipping_address1_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_shipping_address2_"
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/address_2"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/memoTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_shipping_address2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top"
+                                android:lines="4"
+                                android:maxLines="4"
+                                android:text="@={currentUser.shipping_address_2}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/stateTitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/state"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/countrySelectionView" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_shipping_state_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/state"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/stateTitleTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_shipping_state"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.shipping_state}"
+                                android:visibility="gone" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/cityTitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/city"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_shipping_state_" />
+
+                        <EditText
+                            android:id="@+id/edtCitySelectionView"
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:background="#fff"
+                            android:hint="@string/city"
+                            android:padding="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cityTitleTextView" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/citySelectionView"
+                            android:layout_width="0dp"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/border"
+                            android:visibility="gone"
+                            app:cardCornerRadius="@dimen/space_4"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cityTitleTextView">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/cityTextView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/md_grey_100"
+                                    android:ems="10"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/search__notSet"
+                                    android:inputType="none"
+                                    android:paddingStart="10dp"
+                                    android:paddingTop="8dp"
+                                    android:paddingEnd="10dp"
+                                    android:paddingBottom="8dp"
+                                    android:text="@={currentUser.shipping_city}"
+                                    android:textColor="@color/text__primary"
+                                    android:textSize="@dimen/font_body_size"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/cityImageView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:contentDescription="@string/image_default__image"
+                                    android:tint="@color/md_grey_400"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/down" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/countryTitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/country"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_shipping_address2_" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/countrySelectionView"
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/border"
+                            android:visibility="gone"
+                            app:cardCornerRadius="@dimen/space_4"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/countryTitleTextView">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/countryTextView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/md_grey_100"
+                                    android:ems="10"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/search__notSet"
+                                    android:inputType="none"
+                                    android:paddingStart="10dp"
+                                    android:paddingTop="8dp"
+                                    android:paddingEnd="10dp"
+                                    android:paddingBottom="8dp"
+                                    android:text="@={currentUser.shipping_country}"
+                                    android:textColor="@color/text__primary"
+                                    android:textSize="@dimen/font_body_size"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/imageView3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:contentDescription="@string/image_default__image"
+                                    android:tint="@color/md_grey_400"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/down" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/postalTitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/postal_code"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/edtCitySelectionView" />
+
+                        <EditText
+                            android:id="@+id/edt_postal_code"
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:background="#fff"
+                            android:hint="@string/postal_code"
+                            android:padding="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/postalTitleTextView" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_shipping_postal_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/postal_code"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/postalTitleTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_shipping_postal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.shipping_postal_code}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_8"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/shippingCardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/md_white_1000"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/sortByTextView3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/billing_address"
+                            android:textAlignment="viewStart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_title_size"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/lastNameTitleTextView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/last_name"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_billing_first_name_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_billing_last_name_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/last_name"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lastNameTitleTextView1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_billing_last_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.billing_last_name}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/firstNameTitleTextView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/first_name"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/sortByTextView3" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_billing_first_name_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/first_name"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/firstNameTitleTextView1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_billing_first_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.billing_first_name}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/emailTitleTextView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/email"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_billing_last_name_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_billing_email_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/email"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/emailTitleTextView1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_billing_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.billing_email}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/phoneTitleTextView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/checkout__phone"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_billing_email_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_billing_phone_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/phone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/phoneTitleTextView1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_billing_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.billing_phone}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/companyTitleTextView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/company"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_billing_phone_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_billing_company_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/company"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/companyTitleTextView1"
+                            tools:ignore="TooManyViews">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_billing_company"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.billing_company}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/address1TitleTextView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/address"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_billing_company_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_billing_address1_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/address"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/address1TitleTextView1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_billing_address1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top"
+                                android:lines="4"
+                                android:maxLines="4"
+                                android:text="@={currentUser.billing_address_1}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/memoTextView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/address_2"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_billing_address1_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_billing_address2_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/address_2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/memoTextView1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_billing_address2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top"
+                                android:lines="4"
+                                android:maxLines="4"
+                                android:text="@={currentUser.billing_address_2}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/stateTitleTextView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/state"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_billing_country_" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_billing_state_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/state"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/stateTitleTextView1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_billing_state"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.billing_state}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/cityTitleTextView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/city"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_billing_state_" />
+
+                        <EditText
+                            android:id="@+id/edt_user_billing_city_"
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:background="#fff"
+                            android:hint="@string/city"
+                            android:padding="5dp"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cityTitleTextView1" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_billing_city_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/city"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cityTitleTextView1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_billing_city"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.billing_city}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/countryTitleTextView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/country"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_billing_address2_" />
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_billing_country_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:hint="@string/country"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/countryTitleTextView1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_billing_country"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.billing_country}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/postalTitleTextView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/postal_code"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text__primary"
+                            android:textSize="@dimen/font_body_s_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/edt_user_billing_city_" />
+
+                        <EditText
+                            android:id="@+id/edt_user_billing_postal_"
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_16"
+                            android:background="#fff"
+                            android:hint="@string/postal_code"
+                            android:padding="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/postalTitleTextView1" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/user_billing_postal_"
+
+                            style="@style/md_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/space_32"
+                            android:hint="@string/postal_code"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/postalTitleTextView1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/user_billing_postal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/space_32"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text="@={currentUser.billing_postal_code}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/edit_profile__save"
+
+            android:textColor="@color/button__primary_text"
+            tools:text="Save" />
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userModel"
+            type="com.dvishapps.yourshop.ui.viewModel.UserViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.layout.profile.ChangePwdFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pwd_layout"
+
+            style="@style/md_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_16"
+            android:hint="@string/edit_profile__password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="@={userModel.pwd}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/confirm_pwd_layout"
+
+            style="@style/md_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_16"
+            android:hint="@string/password_change__confirm_password"
+            app:layout_constraintEnd_toEndOf="@+id/pwd_layout"
+            app:layout_constraintStart_toStartOf="@+id/pwd_layout"
+            app:layout_constraintTop_toBottomOf="@+id/pwd_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirm_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="@={userModel.confirmPwd}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_pwd"
+            style="@style/input_outline_blue"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_60"
+            android:layout_margin="@dimen/space_16"
+            android:text="@string/password_change__save"
+            android:textColor="@color/ms_white"
+            android:textSize="@dimen/font_body_lg_size"
+            app:layout_constraintEnd_toEndOf="@+id/confirm_pwd_layout"
+            app:layout_constraintStart_toStartOf="@+id/confirm_pwd_layout"
+            app:layout_constraintTop_toBottomOf="@+id/confirm_pwd_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

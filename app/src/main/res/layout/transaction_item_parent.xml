@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/space_12"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/space_3">
+
+        <TextView
+            android:id="@+id/trans_item_category"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/trans_rv_prent_item"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/space_4"
+            android:text="3434"
+            android:textColor="@color/md_blue_400"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/divider7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignStart="@+id/trans_rv_prent_item"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/trans_item_category"
+            android:background="?android:attr/listDivider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/trans_rv_prent_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trans_item_category"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_4"
+           />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

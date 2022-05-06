@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+ext {
+    isLibrary = true
+    pomPackaging = "aar"
+    pomArtifactId = "zbar"
+    pomName = "ZBar Scanner View"
+    pomDescription = 'An android library project which contains the zbar barcode scanner view'
+}
+
+
+dependencies {
+    //compile project(":core")
+    compile 'me.dm7.barcodescanner:core:1.9'
+    implementation fileTree(dir: 'libs', include: '*.jar')
+}

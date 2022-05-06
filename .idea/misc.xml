@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable-anydpi/ic_action_add.xml" value="0.25416666666666665" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable/badge.xml" value="0.1725" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable/badge_for_lower_device.xml" value="0.1725" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable/bg_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable/btn_corner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable/btn_corner_grey.xml" value="0.25416666666666665" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable/divider_inner.xml" value="0.1725" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable/ic_add.xml" value="0.1725" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable/ic_basket.xml" value="0.1725" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable/ic_remove.xml" value="0.25416666666666665" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable/radius.xml" value="0.25416666666666665" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/drawable/toggle.xml" value="0.1725" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/font/heading_text.xml" value="0.2682291666666667" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/layout/a_checkout.xml" value="0.23802083333333332" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/layout/a_product_item.xml" value="0.23802083333333332" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/layout/a_product_item_shimmer.xml" value="0.23802083333333332" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/layout/checkout_child_item.xml" value="0.23802083333333332" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/layout/checkout_parent_item.xml" value="0.23802083333333332" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/layout/custom_bar_1.xml" value="0.23802083333333332" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/layout/f_category.xml" value="0.23802083333333332" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/layout/f_product.xml" value="0.23435897435897435" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/layout/transaction_item.xml" value="0.23802083333333332" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/menu/fragment_menu.xml" value="0.23802083333333332" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/menu/home.xml" value="0.23802083333333332" />
+        <entry key="..\:/Work Companies/Dvish/All project source codes/Source code - Call screen fix by a developer/Sendable/Latest working app/YourShopLiveApp/app/src/main/res/menu/menu.xml" value="0.23802083333333332" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8 (2)" project-jdk-type="JavaSDK" />
+</project>

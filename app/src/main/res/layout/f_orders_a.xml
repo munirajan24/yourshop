@@ -1,0 +1,424 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.dvishapps.yourshop.utils.StringUtil" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="orders"
+            type="com.dvishapps.yourshop.models.Order" />
+
+        <variable
+            name="viewModel"
+            type="com.dvishapps.yourshop.ui.viewModel.TransactionViewModel" />
+
+        <variable
+            name="user"
+            type="com.dvishapps.yourshop.models.User" />
+
+        <variable
+            name="userModel"
+            type="com.dvishapps.yourshop.ui.viewModel.UserViewModel" />
+
+        <variable
+            name="isLoading"
+            type="boolean" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_order_background">
+
+        <LinearLayout
+            android:id="@+id/lnr_pb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/pb"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/orangeBackground"
+                android:indeterminateTintMode="src_atop"
+                android:progress="50"
+                android:progressTint="@color/md_deep_orange_A200"
+                android:secondaryProgressTint="@color/md_blue_grey_400"
+                android:visibility="@{isLoading ? View.VISIBLE : View.GONE}" />
+        </LinearLayout>
+
+        <!--        <androidx.core.widget.NestedScrollView-->
+        <!--            android:id="@+id/nested_scroll_layout"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            >-->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/no_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/space_8"
+            android:text="Could not find this shop"
+            android:textColor="@color/text__primary_dark"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/lnr_sub_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/lnr_pb"
+            android:orientation="vertical">
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_view_container_delivery_staff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                app:shimmer_duration="800">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/delivery_staff_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lnr_delivery_staff_not_available_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/txt_delivery_staff_not_available"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_delivery_man_24"
+                        android:drawablePadding="@dimen/space_5"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/space_3"
+                        android:text="Delivery staff information not available" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lnr_delivery_staff_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txt_your_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Delivery Staff" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_5"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/txt_name"
+                                style="@style/txt_custom_style_large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="@dimen/space_5"
+                                android:layout_weight=".7"
+                                android:drawableStart="@drawable/ic_delivery_man_24"
+                                android:drawablePadding="@dimen/space_5"
+                                android:padding="@dimen/space_3"
+                                android:text="" />
+
+
+                            <TextView
+                                android:id="@+id/txt_phone_number"
+                                style="@style/txt_custom_style_large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txt_name"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="@dimen/space_5"
+                                android:layout_marginBottom="@dimen/space_5"
+                                android:layout_weight=".7"
+                                android:drawableStart="@drawable/ic_smartphone_24"
+                                android:drawablePadding="@dimen/space_5"
+                                android:padding="@dimen/space_3"
+                                android:text="" />
+
+
+                            <ImageView
+                                android:id="@+id/img_call"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_below="@id/txt_name"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/space_5"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:layout_marginBottom="@dimen/space_5"
+                                android:layout_weight=".1"
+                                android:padding="@dimen/space_3"
+                                android:src="@drawable/ic_phone" />
+
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lnr_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:id="@+id/rl_filter_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/space_5"
+                            android:background="@drawable/btn_corner_2"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:gravity="center"
+                                android:text="Filter"
+                                android:textColor="@color/md_grey_700"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/ic_right"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="@dimen/space_5"
+                                android:padding="@dimen/space_3"
+                                android:src="@drawable/ic_arrow_right_black" />
+
+                            <ImageView
+                                android:id="@+id/ic_down"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="@dimen/space_5"
+                                android:padding="@dimen/space_3"
+                                android:src="@drawable/ic_arrow_down_black"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lnr_more_filters"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <info.hoang8f.android.segmented.SegmentedGroup xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/segmented_payment_filter"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2"
+                                segmentedgroup:sc_border_width="2dp"
+                                segmentedgroup:sc_corner_radius="5dp"
+                                segmentedgroup:sc_tint_color="@color/orangeBackground">
+
+                                <RadioButton
+                                    android:id="@+id/radio_cod"
+                                    style="@style/RadioButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:padding="@dimen/space_3"
+                                    android:text="CASH ON DELIVERY" />
+
+                                <RadioButton
+                                    android:id="@+id/radio_online_payment"
+                                    style="@style/RadioButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:padding="@dimen/space_3"
+                                    android:text="ONLINE PAYMENT" />
+                            </info.hoang8f.android.segmented.SegmentedGroup>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/no_orders"
+                            style="@style/txt_input_outline"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="@dimen/space_32"
+                            android:gravity="center"
+                            android:text="There are no orders"
+                            android:textColor="@color/md_grey_500"
+                            android:textSize="@dimen/font_body_lg_size"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/space_2"
+                        android:visibility="gone"
+                        android:weightSum="1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/space_32"
+                            android:layout_weight=".2"
+                            android:tint="@color/md_grey_500"
+                            app:srcCompat="@drawable/ic_list_black_24dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".8"
+                            android:text="@string/profile__orders"
+                            android:textColor="@color/md_grey_500"
+                            android:textSize="@dimen/font_body_size"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="@dimen/space_4"
+                        android:background="@drawable/divider_inner"
+                        android:visibility="gone" />
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/shimmer_view_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                        app:shimmer_duration="800">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <include
+                                layout="@layout/order_item_shimmer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <include
+                                layout="@layout/order_item_shimmer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <include
+                                layout="@layout/order_item_shimmer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                        android:id="@+id/swipelayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!--                        <ScrollView-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="match_parent">-->
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/orders_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+                        <!--                        </ScrollView>-->
+                    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/space_4"
+                        android:layout_marginEnd="@dimen/space_4"
+                        android:layout_marginBottom="@dimen/space_1"
+                        android:background="@drawable/divider_inner"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--        </androidx.core.widget.NestedScrollView>-->
+    </RelativeLayout>
+</layout>

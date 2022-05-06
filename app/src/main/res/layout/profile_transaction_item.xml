@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.dvishapps.yourshop.utils.StringUtil" />
+
+        <variable
+            name="prod"
+            type="com.dvishapps.yourshop.models.TransactionDetail" />
+
+        <variable
+            name="tran"
+            type="com.dvishapps.yourshop.models.Transaction" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_5"
+        android:elevation="@dimen/space_1"
+        app:cardCornerRadius="@dimen/space_5"
+        app:strokeColor="@color/md_grey_200"
+        app:strokeWidth="@dimen/space_1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/space_8">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_default_image"
+                    android:src="@drawable/baseline_tag_black_24"
+                    android:tint="@color/md_grey_700"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:padding="@dimen/space_3"
+                    android:text="@{prod.product_name}"
+                    android:textColor="@color/md_grey_900"
+                    android:textSize="@dimen/font_body_s_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView5"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/divider_inner" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_16">
+
+                <TextView
+                    android:id="@+id/text_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/basket_card_view__price"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="@dimen/font_body_size"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/value_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:text="@{StringUtil.setString(@string/transaction_detail__set_amount,prod.currency_symbol,prod.price)}"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="@dimen/font_body_size"
+                    app:layout_constraintBottom_toBottomOf="@+id/value_qty"
+                    app:layout_constraintStart_toEndOf="@id/qty_multiply"
+                    app:layout_constraintTop_toTopOf="@+id/value_qty" />
+
+                <TextView
+                    android:id="@+id/text_discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:text="@string/transaction_order__discount_available_amount"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="@dimen/font_body_size"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_price" />
+
+                <TextView
+                    android:id="@+id/value_discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:text="@{StringUtil.setString(@string/transaction_detail__set_amount,prod.currency_symbol,prod.discount_amount)}"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="@dimen/font_body_size"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_discount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/text_discount" />
+
+                <TextView
+                    android:id="@+id/text_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:text="@string/transaction_order__balance"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="@dimen/font_body_size"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_discount" />
+
+                <TextView
+                    android:id="@+id/value_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:text="@{StringUtil.setString(@string/transaction_detail__set_amount,prod.currency_symbol,tran.balance_amount)}"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="@dimen/font_body_size"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/value_qty"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/value_qty" />
+
+                <TextView
+                    android:id="@+id/text_qty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:text="@string/transaction_order__count"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="@dimen/font_body_size"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_balance" />
+
+                <TextView
+                    android:id="@+id/value_qty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/space_8"
+                    android:text="@{prod.qty}"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="@dimen/font_body_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/qty_multiply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/x"
+                    android:textSize="@dimen/font_body_size"
+                    android:layout_marginEnd="@dimen/space_12"
+                    android:layout_marginStart="@dimen/space_12"
+
+                    app:layout_constraintBottom_toBottomOf="@+id/value_qty"
+                    app:layout_constraintTop_toTopOf="@+id/value_qty"
+                    app:layout_constraintStart_toEndOf="@id/value_qty"
+                    app:layout_constraintEnd_toStartOf="@id/value_price"
+                    />
+
+                <TextView
+                    android:id="@+id/text_sub_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:text="@string/transaction_order__sub_total"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="@dimen/font_body_size"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/value_qty" />
+
+                <TextView
+                    android:id="@+id/value_sub_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:text="@string/checkout__dash"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="@dimen/font_body_size"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_sub_total"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/text_sub_total" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgcolor"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/rl_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="2dp">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginBottom="-5dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/yourshop_thumnail" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="60dp"
+                            android:layout_marginRight="62dp"
+                            android:background="@drawable/background_with_shadow"
+                            android:orientation="horizontal"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp">
+
+                            <EditText
+                                android:id="@+id/edt_location"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:background="@null"
+                                android:drawableLeft="@drawable/location"
+                                android:ems="14"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:hint="Location"
+                                android:singleLine="true"
+                                android:clickable="true"
+                                android:focusable="false"
+                                android:textSize="14dp">
+
+                                <!--                    <requestFocus />-->
+                            </EditText>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="-6dp"
+                            android:layout_marginRight="-7dp"
+                            android:layout_marginBottom="-7dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/btn_scan"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/scan_button"
+                                android:visibility="visible" />
+
+                            <ProgressBar
+                                android:id="@+id/progress_location2"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_margin="5dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <!--Categories Area-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:orientation="vertical"
+
+                    >
+
+                    <ProgressBar
+                        android:id="@+id/pb2"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="true"
+                        android:indeterminateTint="@color/orangeBackground"
+                        android:indeterminateTintMode="src_atop"
+                        android:progress="50"
+                        android:progressTint="@color/md_deep_orange_A200"
+                        android:secondaryProgressTint="@color/md_blue_grey_400"
+                        android:visibility="gone" />
+                    <!--Favorite Area-->
+
+                    <LinearLayout
+                        android:id="@+id/lnr_choose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="10dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/first_panel">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="18dp"
+                                android:layout_marginRight="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/fav_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="My Favorite Shops"
+                                        android:textColor="@color/themesecondcolor"
+                                        android:textSize="14dp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/favoriteshop"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_toEndOf="@id/fav_title">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toStartOf="@id/txt_view_all">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="2dp"
+                                            android:layout_marginRight="5dp"
+                                            android:fontFamily="@font/roboto_italic"
+                                            android:gravity="center_vertical"
+                                            android:text="Join Your"
+                                            android:textColor="@color/themesecondcolor"
+                                            android:textSize="11dp"
+                                            android:textStyle="bold" />
+
+                                        <LinearLayout
+                                            android:layout_width="100dp"
+                                            android:layout_height="20dp"
+                                            android:background="@drawable/w1">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="5dp"
+                                                android:layout_marginTop="2dp"
+                                                android:layout_weight="1"
+                                                android:fontFamily="@font/poppins_semibold"
+                                                android:gravity="center_vertical"
+                                                android:text=" Business"
+                                                android:textColor="@color/yellow_1"
+                                                android:textSize="11dp" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="2dp"
+                                                android:layout_weight="1"
+                                                android:fontFamily="@font/poppins_semibold"
+                                                android:gravity="center_vertical"
+                                                android:text=" Shop"
+                                                android:textColor="@color/yellow_1"
+                                                android:textSize="11dp" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/txt_view_all"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="View All"
+                                        android:textColor="@color/themesecondcolor"
+                                        android:textSize="11dp" />
+                                </RelativeLayout>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/slider_favorite_shop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            card_view:cardCornerRadius="6dp"
+                            card_view:cardElevation="0dp">
+
+                            <RelativeLayout
+                                android:id="@+id/slider_favorite"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin"
+                                android:paddingBottom="5dp">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/shop_list"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginBottom="15dp"
+                                    android:nestedScrollingEnabled="false"
+                                    android:visibility="visible" />
+
+                                <androidx.viewpager.widget.ViewPager
+                                    android:id="@+id/viewPager"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:visibility="gone" />
+
+                                <LinearLayout
+                                    android:id="@+id/SliderDots"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/viewPager"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:orientation="horizontal"></LinearLayout>
+
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="20dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/category"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="180dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/heading">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:gravity="center"
+                                        android:padding="4dp"
+                                        android:text="Categories"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="14dp" />
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                xmlns:tools="http://schemas.android.com/tools"
+                                android:id="@+id/slide11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                tools:context="com.test.myapplication.MainActivity">
+
+                                <HorizontalScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:background="@drawable/grey_bg"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="2dp"
+                                            android:layout_marginBottom="2dp"
+                                            android:orientation="horizontal">
+
+                                            <LinearLayout
+                                                android:id="@+id/restaurant_selected_layout"
+                                                android:layout_width="80dp"
+                                                android:layout_height="130dp"
+                                                android:background="@drawable/shopbtn"
+                                                android:orientation="vertical"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintHeight_percent=".8"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintWidth_percent=".4">
+
+                                                <ImageView
+                                                    android:layout_width="70dp"
+                                                    android:layout_height="70dp"
+
+                                                    android:layout_margin="5dp"
+                                                    android:background="@drawable/shopbtnbg"
+                                                    android:padding="10dp"
+                                                    android:src="@drawable/restaurant_icon" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="15dp"
+                                                    android:layout_marginTop="7dp"
+                                                    android:fontFamily="@font/poppins_semibold"
+                                                    android:text="Restaurant"
+                                                    android:textAlignment="center"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="11dp" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/restaurant_layout"
+                                                android:layout_width="80dp"
+                                                android:layout_height="130dp"
+                                                android:background="@drawable/shopbtnempty"
+                                                android:orientation="vertical"
+                                                android:visibility="gone"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintHeight_percent=".8"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintWidth_percent=".4">
+
+                                                <ImageView
+                                                    android:layout_width="70dp"
+                                                    android:layout_height="70dp"
+                                                    android:layout_margin="5dp"
+                                                    android:background="@drawable/circle"
+                                                    android:padding="10dp"
+                                                    android:src="@drawable/restaurant_icon" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="15dp"
+                                                    android:layout_marginTop="7dp"
+                                                    android:fontFamily="@font/poppins_semibold"
+                                                    android:text="Restaurant"
+                                                    android:textAlignment="center"
+                                                    android:textColor="@color/themesecondcolor"
+                                                    android:textSize="11dp" />
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="2dp"
+                                            android:layout_marginBottom="2dp"
+                                            android:orientation="horizontal">
+
+                                            <LinearLayout
+                                                android:id="@+id/grocery_selected_layout"
+                                                android:layout_width="80dp"
+                                                android:layout_height="130dp"
+                                                android:background="@drawable/shopbtn"
+                                                android:orientation="vertical"
+                                                android:visibility="gone"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintHeight_percent=".8"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintWidth_percent=".4">
+
+                                                <ImageView
+                                                    android:layout_width="70dp"
+                                                    android:layout_height="70dp"
+
+                                                    android:layout_margin="5dp"
+                                                    android:background="@drawable/shopbtnbg"
+                                                    android:padding="10dp"
+                                                    android:src="@drawable/grocery_icon" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="15dp"
+                                                    android:layout_marginTop="7dp"
+                                                    android:fontFamily="@font/poppins_semibold"
+                                                    android:text="Grocery"
+                                                    android:textAlignment="center"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="11dp" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/grocery_layout"
+                                                android:layout_width="80dp"
+                                                android:layout_height="130dp"
+                                                android:background="@drawable/shopbtnempty"
+                                                android:orientation="vertical"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintHeight_percent=".8"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintWidth_percent=".4">
+
+                                                <ImageView
+                                                    android:layout_width="70dp"
+                                                    android:layout_height="70dp"
+                                                    android:layout_margin="5dp"
+                                                    android:background="@drawable/circle"
+                                                    android:padding="10dp"
+                                                    android:src="@drawable/grocery_icon" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="15dp"
+                                                    android:layout_marginTop="7dp"
+                                                    android:fontFamily="@font/poppins_semibold"
+                                                    android:text="Grocery"
+                                                    android:textAlignment="center"
+                                                    android:textColor="@color/themesecondcolor"
+                                                    android:textSize="11dp" />
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="2dp"
+                                            android:layout_marginBottom="2dp"
+                                            android:orientation="horizontal">
+
+                                            <LinearLayout
+                                                android:id="@+id/vegetables_selected_layout"
+                                                android:layout_width="80dp"
+                                                android:layout_height="130dp"
+                                                android:background="@drawable/shopbtn"
+                                                android:orientation="vertical"
+                                                android:visibility="gone"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintHeight_percent=".8"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintWidth_percent=".4">
+
+                                                <ImageView
+                                                    android:layout_width="70dp"
+                                                    android:layout_height="70dp"
+
+                                                    android:layout_margin="5dp"
+                                                    android:background="@drawable/shopbtnbg"
+                                                    android:padding="10dp"
+                                                    android:src="@drawable/vegetables_icon" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="15dp"
+                                                    android:layout_marginTop="7dp"
+                                                    android:fontFamily="@font/poppins_semibold"
+                                                    android:text="Vegetables"
+                                                    android:textAlignment="center"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="11dp" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/vegetables_layout"
+                                                android:layout_width="80dp"
+                                                android:layout_height="130dp"
+                                                android:background="@drawable/shopbtnempty"
+                                                android:orientation="vertical"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintHeight_percent=".8"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintWidth_percent=".4">
+
+                                                <ImageView
+                                                    android:layout_width="70dp"
+                                                    android:layout_height="70dp"
+                                                    android:layout_margin="5dp"
+                                                    android:background="@drawable/circle"
+                                                    android:padding="10dp"
+                                                    android:src="@drawable/vegetables_icon" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="15dp"
+                                                    android:layout_marginTop="7dp"
+                                                    android:fontFamily="@font/poppins_semibold"
+                                                    android:text="Vegetables"
+                                                    android:textAlignment="center"
+                                                    android:textColor="@color/themesecondcolor"
+                                                    android:textSize="11dp" />
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="2dp"
+                                            android:layout_marginEnd="10dp"
+                                            android:layout_marginBottom="2dp"
+                                            android:orientation="horizontal">
+
+                                            <LinearLayout
+                                                android:id="@+id/meat_selected_layout"
+                                                android:layout_width="80dp"
+                                                android:layout_height="130dp"
+                                                android:background="@drawable/shopbtn"
+                                                android:orientation="vertical"
+                                                android:visibility="gone"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintHeight_percent=".8"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintWidth_percent=".4">
+
+                                                <ImageView
+                                                    android:layout_width="70dp"
+                                                    android:layout_height="70dp"
+
+                                                    android:layout_margin="5dp"
+                                                    android:background="@drawable/shopbtnbg"
+                                                    android:padding="10dp"
+                                                    android:src="@drawable/restaurant_icon" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="15dp"
+                                                    android:layout_marginTop="7dp"
+                                                    android:fontFamily="@font/poppins_semibold"
+                                                    android:text="Meat"
+                                                    android:textAlignment="center"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="11dp" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/meat_layout"
+                                                android:layout_width="80dp"
+                                                android:layout_height="130dp"
+                                                android:background="@drawable/shopbtnempty"
+                                                android:orientation="vertical"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintHeight_percent=".8"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintWidth_percent=".4">
+
+                                                <ImageView
+                                                    android:layout_width="70dp"
+                                                    android:layout_height="70dp"
+                                                    android:layout_margin="5dp"
+                                                    android:background="@drawable/circle"
+                                                    android:padding="10dp"
+                                                    android:src="@drawable/restaurant_icon" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="15dp"
+                                                    android:layout_marginTop="7dp"
+                                                    android:fontFamily="@font/poppins_semibold"
+                                                    android:text="Meat"
+                                                    android:textAlignment="center"
+                                                    android:textColor="@color/themesecondcolor"
+                                                    android:textSize="11dp" />
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+                                </HorizontalScrollView>
+
+                                <androidx.viewpager.widget.ViewPager
+                                    android:id="@+id/viewPager2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="130dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:visibility="gone" />
+
+                                <LinearLayout
+                                    android:id="@+id/SliderDots2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/viewPager2"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:orientation="horizontal"></LinearLayout>
+
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="20dp" />
+
+                    <LinearLayout
+                        android:id="@+id/top_choices_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/choices"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:layout_width="180dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:background="@drawable/heading">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/poppins_semibold"
+                                            android:gravity="center"
+                                            android:padding="4dp"
+                                            android:text="Top Choices"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="14dp" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/top_choice_view_all"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginRight="10dp"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:padding="10dp"
+                                        android:text="View All"
+                                        android:textColor="@color/themesecondcolor"
+                                        android:textSize="11dp" />
+                                </RelativeLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:background="@drawable/grey_bg">
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/shop_list_top_choice"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:visibility="visible" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="20dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/available_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/availableshop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:background="@drawable/heading2">
+
+                                    <TextView
+                                        android:id="@+id/shopCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="25dp"
+                                        android:layout_marginTop="5dp"
+                                        android:background="@drawable/notification"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:paddingLeft="5dp"
+                                        android:paddingRight="5dp"
+                                        android:paddingBottom="-5dp"
+                                        android:text="0"
+                                        android:textColor="@color/themesecondcolor" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="70dp"
+                                        android:layout_marginTop="5dp"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:padding="4dp"
+                                        android:text="Shops Available"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="14dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_available_shops_view_all"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginRight="10dp"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:padding="10dp"
+                                        android:text="View All"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="11dp" />
+
+                                    <View
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="20dp" />
+                                </RelativeLayout>
+
+                                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    xmlns:tools="http://schemas.android.com/tools"
+                                    android:id="@+id/shops"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:background="@drawable/grey_bg">
+
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/shop_list_available"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_marginBottom="5dp"
+                                            android:visibility="visible" />
+
+                                    </LinearLayout>
+                                    <!--code here for shop-->
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/empty_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/empty_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="center"
+                            android:text="Grocery shops not available" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/secondary_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/ms_white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgMainLogo"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:src="@mipmap/ic_launcher_your_shop"
+                    android:visibility="visible" />
+
+                <ProgressBar
+                    android:id="@+id/progress_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="30dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnr_set_location_on_settings"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/text_rounded_bottom_bg_2"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:maxLines="6"
+                    android:minLines="1"
+                    android:paddingStart="@dimen/space_5"
+                    android:paddingTop="@dimen/space_5"
+                    android:paddingEnd="@dimen/space_5"
+                    android:paddingBottom="@dimen/space_5"
+                    android:text="Set location permission on settings"
+                    android:textColor="@color/ms_white"
+                    android:textSize="@dimen/font_body_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lnr_set_location"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/text_rounded_bottom_bg_2"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:maxLines="6"
+                    android:minLines="1"
+                    android:paddingStart="@dimen/space_5"
+                    android:paddingTop="@dimen/space_5"
+                    android:paddingEnd="@dimen/space_5"
+                    android:paddingBottom="@dimen/space_5"
+                    android:text="Continue"
+                    android:textColor="@color/ms_white"
+                    android:textSize="@dimen/font_body_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,1549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.dvishapps.yourshop.models.User" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_grey_200">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/shippingCardView"
+                style="@style/card_corner_top_left_right"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_36"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/space_60"
+                        android:layout_height="@dimen/space_16"
+                        android:layout_gravity="center"
+                       app:srcCompat="@drawable/button_tag_with_state" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_5"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="@dimen/space_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Delivery at"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_your_location"
+                            android:layout_marginTop="@dimen/space_16"
+                            android:text="Your location"
+                            android:textColor="@color/md_grey_500"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/space_16"
+                            android:id="@+id/lnr_get_location"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/txt_map_address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                style="@style/txt_custom_style_large"
+                                android:layout_weight=".7"
+                                android:drawableStart="@drawable/ic_location"
+                                android:drawablePadding="@dimen/space_5"
+                                android:text="Use current location" />
+
+
+                            <TextView
+                                android:id="@+id/txt_change_address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".3"
+                                android:gravity="center"
+                                android:textAllCaps="true"
+                                android:textColor="@color/orangeBackground"
+                                android:text="Get Location"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txt_change_location"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:gravity="center"
+                                    android:text="Get Location"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/orangeBackground"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_address2TitleTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="@dimen/space_32"
+                                    android:layout_toStartOf="@id/txt_change_location"
+                                    android:text="@string/complete_address"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/text__primary"
+                                    android:textSize="@dimen/font_body_s_size" />
+                            </RelativeLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/edt_user_shipping_address2_layout"
+
+                                style="@style/md_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/complete_address"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/address1TitleTextView">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_user_shipping_address2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="top"
+                                    android:lines="4"
+                                    android:maxLines="4"
+                                    android:text="@={user.shipping_address_2}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/space_32"
+                            android:layout_marginStart="@dimen/space_5"
+                            android:layout_marginEnd="@dimen/space_5"
+                            android:layout_marginBottom="@dimen/space_5"
+                            android:id="@+id/lnr_request_phone"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/txt_request_phone"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                style="@style/txt_custom_style_large"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight=".7"
+                                android:drawableStart="@drawable/ic_phone_orange"
+                                android:drawablePadding="@dimen/space_5"
+                                android:text="Need Phone Number !" />
+
+
+                            <TextView
+                                android:id="@+id/txt_get_phone"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".3"
+                                android:gravity="center"
+                                android:textAllCaps="true"
+                                android:textColor="@color/orangeBackground"
+                                android:text="Set Phone Number"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lnr_switch_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/space_16"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <Switch
+                            android:id="@+id/switch_billingLikeShipping"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/switch_textView"
+                            style="@style/Text_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="@string/do_you_want_to_ship_to_different_address"
+                            android:textColor="@color/ms_black"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lnr_default_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txt_name_label"
+                            style="@style/Text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Name"
+                            android:textAlignment="viewStart" />
+
+                        <TextView
+                            android:id="@+id/txt_name_value"
+                            style="@style/Text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Dvish"
+                            android:textAlignment="viewStart"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/txt_email_label"
+                            style="@style/Text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Email"
+                            android:textAlignment="viewStart" />
+
+                        <TextView
+                            android:id="@+id/txt_phone_label"
+                            style="@style/Text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Phone"
+                            android:textAlignment="viewStart" />
+
+                        <TextView
+                            android:id="@+id/txt_address_label"
+                            style="@style/Text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Address"
+                            android:textAlignment="viewStart" />
+
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/shipping_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/postalTitleTextView"
+                            style="@style/Text_style"
+                            android:visibility="gone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/postal_code"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/edt_postalInput"
+                            app:layout_constraintTop_toBottomOf="@+id/countrySelectionView" />
+
+                        <EditText
+                            android:id="@+id/edt_postalInput"
+                            style="@style/txt_custom_input"
+                            android:visibility="gone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:enabled="false"
+                            android:hint="@string/postal_code"
+                            android:inputType="textPersonName"
+                            android:text="@{user.shipping_postal_code}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/edtCitySelectionView"
+                            app:layout_constraintTop_toBottomOf="@+id/cityTitleTextView" />
+
+                        <EditText
+                            android:id="@+id/postalInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/postal_code"
+                            android:inputType="textPersonName"
+                            android:text="@{user.shipping_postal_code}"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/stateInput"
+                            app:layout_constraintTop_toBottomOf="@+id/postalTitleTextView" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/citySelectionView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_5"
+                            android:layout_marginTop="@dimen/space_5"
+                            android:layout_marginEnd="@dimen/space_5"
+                            android:background="@drawable/border"
+                            android:visibility="gone"
+                            app:cardCornerRadius="@dimen/space_4"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cityTitleTextView">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/cityTextView"
+                                    style="@style/Text_style"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:background="@color/md_grey_100"
+                                    android:ems="10"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/search_notSet"
+                                    android:inputType="none"
+                                    android:paddingStart="@dimen/space_8"
+                                    android:paddingEnd="@dimen/space_8"
+                                    android:text="@{user.shipping_city}"
+                                    android:textColor="@color/ms_black"
+                                    android:textSize="@dimen/font_body_size"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/cityImageView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:contentDescription="@string/image_default_image"
+                                    app:srcCompat="@drawable/ic_arrow_down"
+                                    android:tint="@color/md_grey_400"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/stateTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/state"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/stateInput"
+                            app:layout_constraintTop_toBottomOf="@+id/countrySelectionView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/cityTitleTextView"
+                            android:visibility="gone"
+
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/city"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@id/edtCitySelectionView"
+                            app:layout_constraintTop_toBottomOf="@+id/address1Input" />
+
+                        <EditText
+                            android:id="@+id/edtCitySelectionView"
+                            style="@style/txt_custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+
+                            android:enabled="false"
+                            android:gravity="center_vertical"
+                            android:hint="@string/city"
+                            android:inputType="none"
+                            android:text="@{user.shipping_city}"
+                            android:textColor="@color/ms_black"
+                            android:textSize="@dimen/font_body_size"
+                            android:visibility="gone"
+
+                            app:layout_constraintEnd_toStartOf="@id/edt_postalInput"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cityTitleTextView" />
+
+                        <EditText
+                            android:id="@+id/stateInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/state"
+                            android:inputType="textPersonName"
+                            android:text="@{user.shipping_state}"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toStartOf="@+id/edt_postalInput"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/stateTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/countryTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/country"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/countrySelectionView"
+                            app:layout_constraintTop_toBottomOf="@+id/address2Input" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/countrySelectionView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_5"
+                            android:layout_marginTop="@dimen/space_5"
+                            android:layout_marginEnd="@dimen/space_5"
+                            android:background="@drawable/border"
+                            app:cardCornerRadius="@dimen/space_4"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/countryTitleTextView">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/countryTextView"
+                                    style="@style/Text_style"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:background="@color/md_grey_100"
+                                    android:ems="10"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/search_notSet"
+                                    android:inputType="none"
+                                    android:paddingStart="@dimen/space_8"
+                                    android:paddingEnd="@dimen/space_8"
+                                    android:text="@{user.shipping_country}"
+                                    android:textColor="@color/ms_black"
+                                    android:textSize="@dimen/font_body_size"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/imageView3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:contentDescription="@string/image_default_image"
+                                    app:srcCompat="@drawable/ic_arrow_down"
+                                    android:tint="@color/md_grey_400"
+                                    android:visibility="visible"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/companyTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/company"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/companyInput"
+                            app:layout_constraintTop_toBottomOf="@+id/emailInput" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/address1TitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/address"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/address1Input"
+                            app:layout_constraintTop_toBottomOf="@+id/phoneInput" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/memoTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/address_2"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/address2Input"
+                            app:layout_constraintTop_toBottomOf="@+id/address1Input" />
+
+                        <EditText
+                            android:id="@+id/address1Input"
+                            style="@style/txt_custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:enabled="false"
+                            android:gravity="top"
+                            android:hint="@string/address"
+                            android:text="@{user.shipping_address_1}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/address1TitleTextView"
+                            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/address2Input"
+                            style="@style/textArea"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:gravity="top"
+                            android:hint="@string/address_2"
+
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/memoTextView"
+                            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/companyInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:background="@drawable/border"
+                            android:ems="10"
+                            android:hint="@string/company"
+                            android:inputType="textPersonName"
+                            android:text="@{user.shipping_company}"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toStartOf="@+id/phoneInput"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/companyTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/emailTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/email"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/emailInput"
+                            app:layout_constraintTop_toBottomOf="@+id/lastNameInput" />
+
+                        <EditText
+                            android:id="@+id/emailInput"
+                            style="@style/txt_custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:enabled="false"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:text="@{user.user_email}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/emailTitleTextView" />
+
+                        <EditText
+                            android:id="@+id/phoneInput"
+                            style="@style/txt_custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:enabled="false"
+                            android:hint="@string/checkout__phone"
+                            android:inputType="phone"
+                            android:text="@{user.user_phone}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/phoneTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/phoneTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/checkout__phone"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/phoneInput"
+                            app:layout_constraintTop_toBottomOf="@+id/emailInput" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/lastNameTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/last_name"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/lastNameInput"
+                            app:layout_constraintTop_toBottomOf="@+id/sortByTextView2" />
+
+                        <EditText
+                            android:id="@+id/lastNameInput"
+                            style="@style/txt_custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:enabled="false"
+                            android:hint="@string/last_name"
+                            android:inputType="textPersonName"
+                            android:text="@{user.shipping_last_name}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/firstNameInput"
+                            app:layout_constraintTop_toBottomOf="@+id/firstNameTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/firstNameTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/first_name"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/firstNameInput"
+                            app:layout_constraintTop_toBottomOf="@+id/sortByTextView2" />
+
+                        <EditText
+                            android:id="@+id/firstNameInput"
+                            style="@style/txt_custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:enabled="false"
+                            android:hint="@string/first_name"
+                            android:inputType="textPersonName"
+                            android:text="@{user.shipping_first_name.length()==0?user.user_name:user.shipping_first_name}"
+                            app:layout_constraintEnd_toStartOf="@+id/lastNameInput"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/firstNameTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/sortByTextView2"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                           android:visibility="gone"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/default_address"
+                            android:textAlignment="viewStart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/ms_black"
+                            android:textSize="@dimen/font_title_size"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/txt_shipping_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_postalTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/postal_code"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/txt_postalInput"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_countrySelectionView" />
+
+                        <EditText
+                            android:id="@+id/txt_postalInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/postal_code"
+                            android:inputType="textPersonName"
+                            android:text="@{user.shipping_postal_code}"
+                            android:textColor="@color/ms_black"
+                            android:textSize="@dimen/font_body_size"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/txt_CitySelectionView"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_postalTitleTextView" />
+
+                        <EditText
+                            android:id="@+id/txt_edt_postalInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/postal_code"
+                            android:inputType="textPersonName"
+                            android:text="@{user.shipping_postal_code}"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/txt_stateInput"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_postalTitleTextView" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/txt_citySelectionView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_5"
+                            android:layout_marginTop="@dimen/space_5"
+                            android:layout_marginEnd="@dimen/space_5"
+                            android:background="@drawable/border"
+                            android:visibility="gone"
+                            app:cardCornerRadius="@dimen/space_4"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_cityTitleTextView">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/txt_cityTextView"
+                                    style="@style/Text_style"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:background="@color/md_grey_100"
+                                    android:ems="10"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/search_notSet"
+                                    android:inputType="none"
+                                    android:paddingStart="@dimen/space_8"
+                                    android:paddingEnd="@dimen/space_8"
+                                    android:text="@{user.shipping_city}"
+                                    android:textColor="@color/ms_black"
+                                    android:textSize="@dimen/font_body_size"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/txt_cityImageView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:contentDescription="@string/image_default_image"
+                                    app:srcCompat="@drawable/ic_arrow_down"
+                                    android:tint="@color/md_grey_400"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_stateTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/state"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/txt_stateInput"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_countrySelectionView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_cityTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/city"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@id/txt_CitySelectionView"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_address1Input" />
+
+                        <EditText
+                            android:id="@+id/txt_CitySelectionView"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/md_grey_100"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="@string/city"
+                            android:inputType="none"
+                            android:text="@{user.shipping_city}"
+                            android:textColor="@color/ms_black"
+                            android:textSize="@dimen/font_body_size"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toStartOf="@id/txt_postalInput"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_cityTitleTextView" />
+
+                        <EditText
+                            android:id="@+id/txt_stateInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/state"
+                            android:inputType="textPersonName"
+                            android:text="@{user.shipping_state}"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toStartOf="@+id/txt_postalInput"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_stateTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_countryTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/country"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/txt_countrySelectionView"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_address2Input" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/txt_countrySelectionView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_5"
+                            android:layout_marginTop="@dimen/space_5"
+                            android:layout_marginEnd="@dimen/space_5"
+                            android:background="@drawable/border"
+                            app:cardCornerRadius="@dimen/space_4"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_countryTitleTextView">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/txt_countryTextView"
+                                    style="@style/Text_style"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:background="@color/md_grey_100"
+                                    android:ems="10"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/search_notSet"
+                                    android:inputType="none"
+                                    android:paddingStart="@dimen/space_8"
+                                    android:paddingEnd="@dimen/space_8"
+                                    android:text="@{user.shipping_country}"
+                                    android:textColor="@color/ms_black"
+                                    android:textSize="@dimen/font_body_size"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/txt_imageView3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:contentDescription="@string/image_default_image"
+                                    app:srcCompat="@drawable/ic_arrow_down"
+                                    android:tint="@color/md_grey_400"
+                                    android:visibility="visible"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_companyTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/company"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/txt_companyInput"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_emailInput" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_address1TitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/address"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/txt_address1Input"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_phoneInput" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_memoTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/address_2"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/txt_address2Input"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_address1Input" />
+
+                        <EditText
+                            android:id="@+id/txt_address1Input"
+                            style="@style/textArea"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:gravity="top"
+                            android:hint="@string/address"
+                            android:text="@{user.shipping_address_1}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_address1TitleTextView"
+                            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/txt_address2Input"
+                            style="@style/textArea"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:gravity="top"
+                            android:hint="@string/address_2"
+                            android:text="@{user.shipping_address_2}"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_memoTextView"
+                            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/txt_companyInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:background="@drawable/border"
+                            android:ems="10"
+                            android:hint="@string/company"
+                            android:inputType="textPersonName"
+                            android:text="@{user.shipping_company}"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toStartOf="@+id/txt_phoneInput"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_companyTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_emailTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/email"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/txt_emailInput"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_lastNameInput" />
+
+                        <EditText
+                            android:id="@+id/txt_emailInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:text="@{user.user_email}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_emailTitleTextView" />
+
+                        <EditText
+                            android:id="@+id/txt_phoneInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/checkout__phone"
+                            android:inputType="phone"
+                            android:text="@{user.shipping_phone}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_phoneTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_phoneTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/checkout__phone"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/txt_phoneInput"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_emailInput" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_lastNameTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/last_name"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/txt_lastNameInput"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_sortByTextView2" />
+
+                        <EditText
+                            android:id="@+id/txt_lastNameInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/last_name"
+                            android:inputType="textPersonName"
+                            android:text="@{user.shipping_last_name}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/txt_firstNameInput"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_firstNameTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_firstNameTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/first_name"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/txt_firstNameInput"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_sortByTextView2" />
+
+                        <EditText
+                            android:id="@+id/txt_firstNameInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/first_name"
+                            android:inputType="textPersonName"
+                            android:text="@{user.user_name}"
+                            app:layout_constraintEnd_toStartOf="@+id/txt_lastNameInput"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_firstNameTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_sortByTextView2"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/checkout__shipping_address"
+                            android:textAlignment="viewStart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/ms_black"
+                            android:textSize="@dimen/font_title_size"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/billing_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:background="@color/ms_white">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingPostalTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/postal_code"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/billingPostalInput"
+                            app:layout_constraintTop_toBottomOf="@+id/billingAddress1Input" />
+
+                        <EditText
+                            android:id="@+id/billingPostalInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/postal_code"
+                            android:inputType="textPersonName"
+                            android:text="@{user.billing_postal_code}"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@id/billingCityInput"
+                            app:layout_constraintTop_toBottomOf="@+id/billingPostalTitleTextView" />
+
+                        <EditText
+                            android:id="@+id/billingCityInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/city"
+                            android:inputType="textPersonName"
+                            android:text="@{user.billing_city}"
+                            app:layout_constraintEnd_toStartOf="@id/billingPostalInput"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/billingCityTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingStateTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/state"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/billingStateInput"
+                            app:layout_constraintTop_toBottomOf="@+id/billingCountryInput" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingCityTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/city"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/billingCityInput"
+                            app:layout_constraintTop_toBottomOf="@+id/billingAddress1Input" />
+
+                        <EditText
+                            android:id="@+id/billingStateInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:background="@drawable/border"
+                            android:ems="10"
+                            android:hint="@string/state"
+                            android:inputType="textPersonName"
+                            android:text="@{user.billing_state}"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/billingStateTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingCountryTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/country"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/billingCountryInput"
+                            app:layout_constraintTop_toBottomOf="@+id/billingAddress2Input" />
+
+                        <EditText
+                            android:id="@+id/billingCountryInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/country"
+                            android:inputType="textPersonName"
+                            android:text="@{user.billing_country}"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/billingCountryTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingCompanyTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/company"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/billingCompanyInput"
+                            app:layout_constraintTop_toBottomOf="@+id/billingPhoneInput" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingAddress1TitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/address"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/billingAddress1Input"
+                            app:layout_constraintTop_toBottomOf="@+id/billingCompanyInput" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingAddress2TitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/address_2"
+                            android:textAlignment="viewStart"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/billingAddress2Input"
+                            app:layout_constraintTop_toBottomOf="@+id/billingAddress1Input" />
+
+                        <EditText
+                            android:id="@+id/billingAddress1Input"
+                            style="@style/textArea"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:gravity="top"
+                            android:hint="@string/address"
+                            android:text="@{user.billing_address_1}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/billingAddress1TitleTextView"
+                            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/billingAddress2Input"
+                            style="@style/textArea"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:gravity="top"
+                            android:hint="@string/address_2"
+                            android:text="@{user.billing_address_2}"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/billingAddress2TitleTextView"
+                            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/billingCompanyInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/company"
+                            android:inputType="textPersonName"
+                            android:text="@{user.billing_company}"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/billingCompanyTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingEmailTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/email"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/billingEmailInput"
+                            app:layout_constraintTop_toBottomOf="@+id/billingLastNameInput" />
+
+                        <EditText
+                            android:id="@+id/billingEmailInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:text="@{user.billing_email}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/billingEmailTitleTextView" />
+
+                        <EditText
+                            android:id="@+id/billingPhoneInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/checkout__phone"
+                            android:inputType="phone"
+                            android:text="@{user.billing_phone}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/billingPhoneTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingPhoneTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/checkout__phone"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/billingPhoneInput"
+                            app:layout_constraintTop_toBottomOf="@+id/billingEmailInput" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingLastNameTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/last_name"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/billingLastNameInput"
+                            app:layout_constraintTop_toBottomOf="@+id/billigLikeShipping" />
+
+                        <EditText
+                            android:id="@+id/billingLastNameInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:background="@drawable/border"
+                            android:ems="10"
+                            android:hint="@string/last_name"
+                            android:inputType="textPersonName"
+                            android:text="@{user.billing_last_name}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/billingFirstNameInput"
+                            app:layout_constraintTop_toBottomOf="@+id/billingLastNameTitleTextView" />
+
+                        <EditText
+                            android:id="@+id/billingFirstNameInput"
+                            style="@style/custom_input"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:ems="10"
+                            android:hint="@string/first_name"
+                            android:inputType="textPersonName"
+                            android:text="@{user.billing_first_name}"
+                            app:layout_constraintEnd_toStartOf="@+id/billingLastNameInput"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/billingFirstnameTitleTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingFirstnameTitleTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/first_name"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="@+id/billingFirstNameInput"
+                            app:layout_constraintTop_toBottomOf="@+id/billigLikeShipping" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/billingAddressTextView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="16dp"
+                            android:text="Customized Address"
+                            android:textAlignment="viewStart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/ms_black"
+                            android:textSize="@dimen/font_title_size"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Switch
+                            android:id="@+id/billigLikeShipping"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="16dp"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/billingAddressTextView" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textView"
+                            style="@style/Text_style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="@string/do_you_want_to_ship_to_different_address"
+                            android:textColor="@color/ms_black"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@+id/billigLikeShipping"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/billigLikeShipping"
+                            app:layout_constraintTop_toTopOf="@+id/billigLikeShipping" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

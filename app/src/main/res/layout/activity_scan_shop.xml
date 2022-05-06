@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ms_white"
+        tools:context=".ui.layout.scanner.ScanShopActivity">
+
+        <ImageView
+            android:id="@+id/mariginTopView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_100"
+            android:background="@drawable/bg_your_shop_top"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/rl_your_shop_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/lnr_bottom"
+            android:layout_below="@id/mariginTopView">
+
+
+            <TextView
+                android:id="@+id/txt_want"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_16"
+                android:text="WANT"
+                android:textColor="@color/blueBackground"
+                android:textSize="32dp"
+                android:textStyle="bold" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/your_shop"-->
+            <!--                android:layout_width="240dp"-->
+            <!--                android:layout_height="80dp"-->
+            <!--                android:layout_below="@id/txt_want"-->
+            <!--                android:layout_centerHorizontal="true"-->
+            <!--                android:layout_marginBottom="@dimen/space_16"-->
+            <!--                android:background="@drawable/ic_focus"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="YOUR SHOP"-->
+            <!--                android:textColor="@color/ms_white"-->
+            <!--                android:textSize="@dimen/space_32" />-->
+
+            <ImageView
+                android:id="@+id/your_shop"
+                android:layout_width="240dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/txt_want"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_16"
+                android:gravity="center"
+                android:src="@drawable/yourshop_logo_1" />
+
+            <TextView
+                android:id="@+id/txt_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/your_shop"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_16"
+                android:gravity="center"
+                android:text="IN"
+                android:textColor="@color/blueBackground"
+                android:textSize="@dimen/space_24"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txt_in_mobile_app"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_in"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_16"
+                android:gravity="center"
+                android:text="in Mobile App ?"
+                android:textColor="@color/blueBackground"
+                android:textSize="26dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lnr_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <!--            <com.google.android.material.button.MaterialButton-->
+            <!--                android:id="@+id/btn_scan"-->
+            <!--                style="@style/danger_btn_1"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_above="@id/lnr_choose"-->
+            <!--                android:layout_centerHorizontal="true"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:gravity="center"-->
+            <!--                android:padding="@dimen/space_20"-->
+            <!--                android:text="Scan QR Code"-->
+            <!--                android:textSize="@dimen/space_20"-->
+            <!--                app:cornerRadius="@dimen/space_8" />-->
+            <!--        android:layout_marginBottom="@dimen/space_76"-->
+            <!--        android:layout_alignParentBottom="true"-->
+
+
+            <LinearLayout
+                android:id="@+id/lnr_scan_btn"
+                android:layout_width="240dp"
+                android:layout_height="@dimen/space_100"
+                android:layout_gravity="center"
+                android:background="@drawable/button_login_selector"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/btn_scan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/lnr_choose"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/space_20"
+                    android:gravity="center"
+                    android:padding="@dimen/space_20"
+                    android:text="Scan QR Code"
+                    android:textColor="@color/ms_white"
+                    android:textSize="@dimen/space_16"
+                    android:textStyle="bold"
+                    app:cornerRadius="@dimen/space_8" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/mariginBottomView"
+                android:layout_width="match_parent"
+                android:layout_height="73dp"
+                android:layout_above="@id/lnr_choose"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/lnr_choose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginRight="@dimen/space_8"
+                android:layout_marginBottom="@dimen/space_8"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_16"
+                    android:gravity="center"
+                    android:text="OR"
+                    android:textColor="@color/blueBackground"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txt_choose_shop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:text="Choose from previous shops"
+                    android:textColor="@color/blueBackground"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/shop_list"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="left"
+                        android:layout_weight=".7"
+                        android:nestedScrollingEnabled="false" />
+
+                    <TextView
+                        android:id="@+id/txt_view_all"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight=".3"
+                        android:gravity="center"
+                        android:text="View all"
+                        android:textColor="@color/blueBackground"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

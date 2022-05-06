@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="@dimen/space_5"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_8"
+            android:background="@color/shimmer_grey"
+            android:textColor="@color/md_grey_500"
+            android:textSize="@dimen/font_body_size" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_5"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/txt_name1"
+                style="@style/txt_custom_style_large"
+                android:layout_width="200dp"
+                android:layout_alignParentStart="true"
+                android:background="@color/shimmer_grey"
+                android:textColor="@color/md_grey_500"
+                android:layout_height="wrap_content"
+                android:layout_weight=".7"
+                android:layout_marginTop="@dimen/space_5"
+                android:padding="@dimen/space_3"
+                android:drawablePadding="@dimen/space_5"
+                android:text="" />
+
+
+            <TextView
+                android:id="@+id/txt_phone_number1"
+                style="@style/txt_custom_style_large"
+                android:layout_width="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/txt_name1"
+                android:layout_height="wrap_content"
+                android:layout_weight=".7"
+                android:layout_marginTop="@dimen/space_5"
+                android:layout_marginBottom="@dimen/space_5"
+                android:padding="@dimen/space_3"
+                android:background="@color/shimmer_grey"
+                android:textColor="@color/md_grey_500"
+                android:drawablePadding="@dimen/space_5"
+                android:text="" />
+
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="@dimen/space_16"
+                android:layout_weight=".1"
+                android:layout_below="@id/txt_name1"
+                android:layout_marginTop="@dimen/space_5"
+                android:layout_marginBottom="@dimen/space_5"
+                android:padding="@dimen/space_3"
+                android:layout_alignParentEnd="true"
+                android:background="@color/shimmer_grey"
+                />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

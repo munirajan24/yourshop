@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@id/auth_signin">
+
+    <action
+        android:id="@+id/action_auth_signup_to_verifyUserFragment"
+        app:destination="@id/auth_verify"
+        app:enterAnim="@anim/fide_in"
+        app:exitAnim="@anim/fide_out"
+        app:popEnterAnim="@anim/fide_in"
+        app:popExitAnim="@anim/fide_out" />
+
+    <fragment
+        android:id="@+id/auth_signin"
+        android:name="com.dvishapps.yourshop.ui.layout.auth.signin.SignInFragment"
+        android:label="@string/auth_sign_in"
+        tools:layout="@layout/f_signin">
+        <action
+            android:id="@+id/action_auth_signin_to_auth_signup"
+            app:destination="@id/auth_signup"
+            app:enterAnim="@anim/fide_in"
+            app:exitAnim="@anim/fide_out"
+            app:popEnterAnim="@anim/fide_in"
+            app:popExitAnim="@anim/fide_out" />
+        <action
+            android:id="@+id/action_auth_signin_to_forgotPwdFragment"
+            app:destination="@id/forgotPwdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/auth_signup"
+        android:name="com.dvishapps.yourshop.ui.layout.auth.signup.SignUpFragment"
+        android:label="@string/auth_sign_up"
+        tools:layout="@layout/f_signup">
+        <action
+            android:id="@+id/action_auth_signup_to_auth_signin"
+            app:destination="@id/auth_signin"
+            app:enterAnim="@anim/fide_in"
+            app:exitAnim="@anim/fide_out"
+            app:popEnterAnim="@anim/fide_in"
+            app:popExitAnim="@anim/fide_out"
+            />
+        <action
+            android:id="@+id/action_auth_signup_to_verifyUserFragment"
+            app:destination="@id/auth_verify"
+            app:enterAnim="@anim/fide_in"
+            app:exitAnim="@anim/fide_out"
+            app:popEnterAnim="@anim/fide_in"
+            app:popExitAnim="@anim/fide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/auth_verify"
+        android:name="com.dvishapps.yourshop.ui.layout.auth.signup.VerifyUserFragment"
+        android:label="@string/verify_email"
+        tools:layout="@layout/f_verify_user">
+        <action
+            android:id="@+id/action_auth_verify_to_auth_signup"
+            app:destination="@id/auth_signup"
+            app:enterAnim="@anim/fide_in"
+            app:exitAnim="@anim/fide_out"
+            app:popEnterAnim="@anim/fide_in"
+            app:popExitAnim="@anim/fide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPwdFragment"
+        android:name="com.dvishapps.yourshop.ui.layout.auth.signin.ForgotPwdFragment"
+        android:label="ForgotPwdFragment"
+        tools:layout="@layout/f_forgot_password">
+        <action
+            android:id="@+id/action_forgotPwdFragment_to_auth_signin"
+            app:destination="@id/auth_signin" />
+    </fragment>
+</navigation>

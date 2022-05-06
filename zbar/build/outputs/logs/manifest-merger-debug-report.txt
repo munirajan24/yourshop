@@ -1,0 +1,31 @@
+-- Merging decision tree log ---
+manifest
+ADDED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml:3:1-8:12
+INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml:3:1-8:12
+INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml:3:1-8:12
+	package
+		ADDED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml:4:5-41
+		INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+		INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml:3:11-57
+	xmlns:android
+		ADDED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml:3:1-8:12
+application
+ADDED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml:5:5-7:19
+	tools:overrideLibrary
+		ADDED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml:6:9-59
+uses-sdk
+INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+		ADDED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+		INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+		ADDED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml
+		INJECTED from M:\Work Companies\Dvish\All project source codes\Source code - Call screen fix by a developer\Sendable\Latest working app\YourShopLiveApp\zbar\src\main\AndroidManifest.xml

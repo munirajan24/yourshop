@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.layout.checkout.CheckoutActivity">
+
+    <data>
+
+        <import type="com.dvishapps.yourshop.utils.StringUtil" />
+
+        <import type="android.view.View" />
+
+        <import type="com.dvishapps.yourshop.app.Config" />
+
+        <variable
+            name="cart"
+            type="com.dvishapps.yourshop.models.Cart" />
+
+        <variable
+            name="over_all_tax"
+            type="float" />
+
+        <variable
+            name="currency_symbol"
+            type="String" />
+
+        <variable
+            name="totalTax"
+            type="String" />
+
+        <variable
+            name="finalPrice"
+            type="String" />
+
+        <variable
+            name="deliveryCharge"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/check_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                layout="@layout/custom_bar_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btm"
+            android:layout_below="@+id/check_header"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="0dp">
+
+            <ImageView
+                android:id="@+id/checkout_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/empty"
+                android:visibility="@{cart.total_qty &lt;= 0 ? View.VISIBLE : View.GONE,default=gone}" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/checkout_super_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/space_5"
+                android:layout_weight="2"
+                android:visibility="@{cart.total_qty > 0 ? View.VISIBLE : View.GONE}"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+                app:layout_dodgeInsetEdges="bottom" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/divider_inner" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/more_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green_transparent_2"
+                android:orientation="horizontal"
+                android:padding="@dimen/space_4"
+                android:paddingStart="@dimen/space_8"
+                android:weightSum="2"
+                app:behavior_hideable="false"
+                app:behavior_peekHeight="0dp"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+                tools:ignore="RtlSymmetry">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/green_transparent_1"
+                    android:elevation="0dp"
+                    app:cardCornerRadius="@dimen/space_8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="@dimen/space_8"
+                        android:text="Total Amount"
+                        android:textColor="@color/md_grey_50" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/lnrBottomTotal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cad">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/space_4"
+                            android:paddingBottom="@dimen/space_4"
+                            android:text="@string/sub_total"
+                            android:textColor="@color/md_blue_grey_500"
+                            android:textSize="@dimen/font_h7_size"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/tax_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/space_4"
+                            android:paddingBottom="@dimen/space_4"
+                            android:text="@{StringUtil.setString(@string/tax, over_all_tax)}"
+                            android:textColor="@color/md_blue_grey_500"
+                            android:textSize="@dimen/font_h7_size" />
+                        <!--                        android:text="@{StringUtil.setString(@string/tax, Config.TAX_VALUE)}"-->
+
+                        <TextView
+                            android:id="@+id/labelDeliveryCharges"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/space_4"
+                            android:paddingBottom="@dimen/space_4"
+                            android:text="@string/delivery_charges"
+                            android:textColor="@color/md_blue_grey_500"
+                            android:textSize="@dimen/font_h7_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_20"
+                        android:layout_weight=".8"
+                        android:gravity="start"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/space_4"
+                            android:paddingBottom="@dimen/space_4"
+                            android:text="@{StringUtil.concat(currency_symbol, cart.str_total_price)}"
+                            android:textColor="@color/md_blue_grey_500"
+                            android:textSize="@dimen/font_h7_size" />
+
+                        <TextView
+                            android:id="@+id/tax_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/space_4"
+                            android:paddingBottom="@dimen/space_4"
+                            android:text="@{StringUtil.concat(currency_symbol, totalTax)}"
+                            android:textColor="@color/md_blue_grey_500"
+                            android:textSize="@dimen/font_h7_size" />
+
+                        <TextView
+                            android:id="@+id/txtDeliveryCharge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/space_4"
+                            android:paddingBottom="@dimen/space_4"
+                            android:text="@{StringUtil.concat(currency_symbol,StringUtil.convertDec(Double.parseDouble(deliveryCharge)))}"
+                            android:textColor="@color/md_blue_grey_500"
+                            android:textSize="@dimen/font_h7_size" />
+
+                        <TextView
+                            android:id="@+id/txtDeliveryChargeFree"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/space_4"
+                            android:paddingBottom="@dimen/space_4"
+                            android:text="Free"
+                            android:textColor="@color/md_blue_grey_500"
+                            android:textSize="@dimen/font_h7_size"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:id="@+id/txtDeliveryChargeIncludedText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/space_4"
+                    android:paddingBottom="@dimen/space_4"
+                    android:text="*Delivery charges will be calculated"
+                    android:textColor="@color/md_blue_grey_500"
+                    android:textSize="@dimen/font_h7_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lnrBottomTotal" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_60"
+            android:layout_alignParentBottom="true"
+            android:background="@color/md_grey_50"
+            android:orientation="vertical"
+            android:visibility="@{cart.total_qty > 0 ? View.VISIBLE : View.GONE}"
+            android:weightSum="2"
+            tools:ignore="RtlSymmetry">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_60"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                tools:ignore="RtlSymmetry">
+
+                <TextView
+                    android:id="@+id/checkout_total_price"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.8"
+                    android:drawableStart="@drawable/toggle"
+                    android:drawablePadding="@dimen/space_8"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/space_24"
+                    android:text="@{StringUtil.concat(@string/total,` ` + StringUtil.concatWithStar(currency_symbol,finalPrice))}"
+                    android:textColor="@color/md_blue_grey_600"
+                    android:textSize="@dimen/font_title_size"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/checkout_btn"
+                    style="@style/danger_btn_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_weight=".2"
+                    android:text="@string/checkout"
+                    app:cornerRadius="@dimen/space_16" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
+
+</layout>

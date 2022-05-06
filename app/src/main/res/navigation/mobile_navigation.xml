@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <action
+        android:id="@+id/action_to_home"
+        app:destination="@id/nav_home"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <action
+        android:id="@+id/action_to_profile"
+        app:destination="@id/nav_profile"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.dvishapps.yourshop.ui.layout.product.CategoryFragment"
+        android:label="@string/categories"
+        tools:layout="@layout/f_category">
+        <action
+            android:id="@+id/action_nav_home_to_subCategoryActivity"
+            app:destination="@id/subCategoryActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_home_to_detailActivity"
+            app:destination="@id/detailActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_home_to_productFragment"
+            app:destination="@id/productFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.dvishapps.yourshop.ui.layout.profile.ProfileFragment"
+        android:label="@string/menu__profile"
+        tools:layout="@layout/f_profile">
+        <action
+            android:id="@+id/action_nav_profile_to_transactionDetailsFragment"
+            app:destination="@id/nav_transaction_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_profile_to_editProfileFragment"
+            app:destination="@id/nav_edit_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_profile_to_changePwdFragment"
+            app:destination="@id/changePwdFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_profile_to_shopSettingsFragment"
+            app:destination="@id/shopSettingsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/subCategoryActivity"
+        android:name="com.dvishapps.yourshop.ui.layout.product.SubCategoryActivity"
+        android:label="Sub Categories"
+        tools:layout="@layout/f_sub_category">
+        <action
+            android:id="@+id/action_subCategoryActivity_to_productFragment"
+            app:destination="@id/productFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.dvishapps.yourshop.ui.layout.product.ProductFragment"
+        android:label="Product"
+        tools:layout="@layout/f_product">
+        <action
+            android:id="@+id/action_productFragment_to_detailActivity"
+            app:destination="@id/detailActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailActivity"
+        android:name="com.dvishapps.yourshop.ui.layout.product.DetailActivity"
+        android:label="DetailActivity"
+        tools:layout="@layout/a_product_detail" />
+    <fragment
+        android:id="@+id/nav_transaction_detail"
+        android:name="com.dvishapps.yourshop.ui.layout.order.TransactionDetailsFragment"
+        android:label="@string/menu__transaction"
+        tools:layout="@layout/profile_transaction_detail" />
+    <fragment
+        android:id="@+id/nav_edit_profile"
+        android:name="com.dvishapps.yourshop.ui.layout.profile.EditProfileFragment"
+        android:label="@string/edit_setting__edit_profile"
+        tools:layout="@layout/f_edit_profile">
+        <action
+            android:id="@+id/action_nav_edit_profile_to_changePwdFragment"
+            app:destination="@id/changePwdFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_edit_profile_to_nav_profile"
+            app:destination="@id/nav_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/changePwdFragment"
+        android:name="com.dvishapps.yourshop.ui.layout.profile.ChangePwdFragment"
+        android:label="@string/password_change__password_change"
+        tools:layout="@layout/f_change_pwd"/>
+    <fragment
+        android:id="@+id/shopSettingsFragment"
+        android:name="com.dvishapps.yourshop.ui.layout.profile.ShopSettingsFragment"
+        android:label="Shop settings"
+        tools:layout="@layout/f_change_pwd"/>
+    <fragment
+        android:id="@+id/nav_shop"
+        android:name="com.dvishapps.yourshop.ui.layout.shop.ShopFragment"
+        android:label="@string/shop"
+        tools:layout="@layout/f_shop"/>
+<!--    <fragment-->
+<!--        android:id="@+id/nav_order"-->
+<!--        android:name="com.dvishapps.shop.ui.layout.order.OrdersAFragment"-->
+<!--        android:label="@string/order"-->
+<!--        tools:layout="@layout/f_orders_a">-->
+
+<!--        <action-->
+<!--            android:id="@+id/action_nav_order_to_transactionDetailsFragment"-->
+<!--            app:destination="@id/nav_transaction_detail"-->
+<!--            app:enterAnim="@anim/slide_in_right"-->
+<!--            app:exitAnim="@anim/slide_out_left"-->
+<!--            app:popEnterAnim="@anim/slide_in_left"-->
+<!--            app:popExitAnim="@anim/slide_out_right" />-->
+<!--&lt;!&ndash;        <action&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/action_nav_order_to_subCategoryActivity"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:destination="@id/subCategoryActivity"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:enterAnim="@anim/slide_in_right"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:exitAnim="@anim/slide_out_left"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:popEnterAnim="@anim/slide_in_left"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:popExitAnim="@anim/slide_out_right" />&ndash;&gt;-->
+<!--    </fragment>-->
+    <fragment
+        android:id="@+id/nav_order"
+        android:name="com.dvishapps.yourshop.ui.layout.order.OrdersAFragment"
+        android:label="@string/order"
+        tools:layout="@layout/f_orders_s">
+
+        <action
+            android:id="@+id/action_nav_order_to_transactionDetailsFragment"
+            app:destination="@id/nav_transaction_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+<!--        <action-->
+<!--            android:id="@+id/action_nav_order_to_subCategoryActivity"-->
+<!--            app:destination="@id/subCategoryActivity"-->
+<!--            app:enterAnim="@anim/slide_in_right"-->
+<!--            app:exitAnim="@anim/slide_out_left"-->
+<!--            app:popEnterAnim="@anim/slide_in_left"-->
+<!--            app:popExitAnim="@anim/slide_out_right" />-->
+    </fragment>
+
+
+</navigation>

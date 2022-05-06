@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userModel"
+            type="com.dvishapps.yourshop.ui.viewModel.UserViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".ui.layout.profile.ChangePwdFragment">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="Shop open time" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shop_open_time_layout"
+
+                style="@style/md_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Shop open time">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/shop_open_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="false" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="Shop close time" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shop_close_time_layout"
+
+                style="@style/md_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Shop close time">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/shop_close_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="false" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="Package charge (in Rs.)" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shop_packaging_charge_layout"
+
+                style="@style/md_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/space_8"
+
+                android:layout_marginEnd="16dp"
+                android:hint="Package charge">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/shop_packaging_charge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+
+                android:layout_marginEnd="16dp"
+                android:text="Shipping cost (in Rs. per km)" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/blue_stroke_bg"
+                android:drawableStart="@drawable/ic_info_24"
+                android:drawablePadding="@dimen/space_5"
+                android:padding="@dimen/space_8"
+                android:text="For first 2 kilometers we will charge Rs.20.
+\nAbove 2 kilometers we will charge as per shipping cost. Minimum shipping cost is Rs.5 per kilometers" />
+
+            <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                android:id="@+id/number_button_shipping_cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                app:backGroundColor="@color/colorPrimary"
+                app:textSize="8sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:visibility="visible"
+                android:text="Tax ( % )" />
+
+            <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                android:id="@+id/number_button_tax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                app:backGroundColor="@color/colorPrimary"
+                app:textSize="8sp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="Shop current version" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shop_version_layout"
+
+                style="@style/md_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Shop current version">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/shop_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:longClickable="false" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_5"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Shop Location" />
+
+                <ProgressBar
+                    android:id="@+id/progressLocation"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                    android:layout_toStartOf="@id/txt_change_address" />
+
+                <TextView
+                    android:id="@+id/txt_change_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawableEnd="@drawable/ic_baseline_my_location_24"
+                    android:drawablePadding="@dimen/space_5"
+                    android:gravity="center"
+                    android:text="Get Location"
+                    android:textAllCaps="true"
+                    android:textColor="@color/orangeBackground"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shop_location_layout"
+
+                style="@style/md_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Shop Location">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/shop_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:gravity="start"
+                    android:longClickable="false"
+                    android:minLines="3" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save_pwd"
+                style="@style/input_outline_blue"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_60"
+                android:layout_margin="@dimen/space_16"
+                android:text="@string/password_change__save"
+                android:textColor="@color/ms_white"
+                android:textSize="@dimen/font_body_lg_size"
+                app:layout_constraintEnd_toEndOf="@+id/confirm_pwd_layout"
+                app:layout_constraintStart_toStartOf="@+id/confirm_pwd_layout"
+                app:layout_constraintTop_toBottomOf="@+id/confirm_pwd_layout" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.dvishapps.yourshop.utils.StringUtil"/>
+        <variable
+            name="product"
+            type="com.dvishapps.yourshop.models.Product" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/pack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/border"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/pack_discount_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorPrimary"
+            android:padding="2dp"
+            android:text=""
+            android:textSize="@dimen/space_12" />
+
+        <TextView
+            android:id="@+id/pack_out_of_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/border"
+            android:padding="@dimen/space_2"
+            android:text=""
+            android:textSize="10sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pack_discount_percent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pack_product_measurement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_2"
+                android:text="@{product.product_measurement}"
+                android:textSize="13sp" />
+
+
+            <TextView
+                android:id="@+id/pack_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_2"
+                android:text="pool"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/t2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pack_discount_percent"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pack_product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_2"
+                android:text="@{StringUtil.convertNumber(product.unit_price)}"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/pack_original_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/line_through"
+                android:padding="@dimen/space_2"
+                android:text="@{StringUtil.convertNumber(product.original_price)}"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/pack_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pack_discount_percent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/space_12"
+            android:layout_marginEnd="@dimen/space_12" />
+
+    </RelativeLayout>
+</layout>

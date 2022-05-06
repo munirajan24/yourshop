@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/Address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:enabled="false"
+                android:hint="Address"
+                android:singleLine="true"
+                android:visibility="gone" />
+
+            <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
+                android:id="@+id/places_autocomplete"
+                style="@style/txt_input_outline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search location"
+                android:visibility="gone"
+                app:pacv_googleMapsApiKey="@string/google_maps_key" />
+
+
+            <fragment
+                android:id="@+id/autocomplete_fragment"
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/Locality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_12"
+                    android:layout_toStartOf="@id/imgbtn_collapse"
+                    android:drawableLeft="@drawable/ic_location"
+                    android:drawablePadding="@dimen/space_5"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="Click to change location"
+                    android:textSize="@dimen/space_20" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_collapse"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/upload" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lnr_address_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycle_address_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/container_toolbar">
+
+        <androidx.fragment.app.FragmentContainerView xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.sample.sishin.maplocation.MapsActivity" />
+
+        <LinearLayout
+            android:id="@+id/locationMarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/locationMarkertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner_map"
+                android:gravity="center"
+                android:minWidth="250dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:text=" Set your Location "
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:id="@+id/imageMarker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pin" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_confirm_location"
+            android:layout_marginStart="@dimen/space_5"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/space_5"
+            android:background="@color/md_white_1000">
+
+            <LinearLayout
+                android:id="@+id/lnr_current_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_5"
+                android:layout_marginEnd="@dimen/space_5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery at"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_your_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:text="Your location"
+                    android:textColor="@color/md_grey_500"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/lnr_get_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/txt_map_address"
+                        style="@style/txt_custom_style_large"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".7"
+                        android:drawableStart="@drawable/ic_location"
+                        android:drawablePadding="@dimen/space_5"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/txt_change_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:gravity="center"
+                        android:text="Change"
+                        android:visibility="gone"
+                        android:textAllCaps="true"
+                        android:textColor="@color/orangeBackground"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_confirm_location"
+                    style="@style/orange_btn_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:text="Confirm location" />
+                <Button
+                    android:id="@+id/btn_confirm_location_disabled"
+                    style="@style/orange_btn_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:textColor="#fff"
+                    android:backgroundTint="@color/md_grey_300"
+                    android:text="Confirm location" />
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

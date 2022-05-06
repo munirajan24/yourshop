@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="@dimen/space_8"
+        android:layout_marginTop="@dimen/space_8"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="@dimen/space_8"
+        android:layout_marginBottom="@dimen/space_8">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/choices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:id="@+id/lnr_choose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/heading2">
+
+                    <TextView
+                        android:id="@+id/shopCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/notification"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="-5dp"
+                        android:text="0"
+                        android:textColor="@color/themesecondcolor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:padding="4dp"
+                        android:text="Shops Available"
+                        android:textColor="@android:color/white"
+                        android:textSize="14dp" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/search_bar_input"
+                        style="@style/search_bar_input"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_48"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:layout_marginBottom="@dimen/space_8"
+                        android:hint="Search"
+                        app:startIconDrawable="@drawable/ic_search">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/search"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grey_bg"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/shop_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="left"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:nestedScrollingEnabled="false" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

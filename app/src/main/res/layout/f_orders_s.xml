@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/pb"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/orangeBackground"
+                android:indeterminateTintMode="src_atop"
+                android:progress="50"
+                android:progressTint="@color/md_deep_orange_A200"
+                android:secondaryProgressTint="@color/md_blue_grey_400"
+                android:visibility="gone"
+                />
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                app:shimmer_duration="800"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <include layout="@layout/delivery_staff_shimmer"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+            <LinearLayout
+                android:id="@+id/lnr_delivery_staff_not_available_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="@dimen/space_5"
+                android:layout_marginEnd="16dp"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_delivery_staff_not_available"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_3"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_delivery_man_24"
+                    android:drawablePadding="@dimen/space_5"
+                    android:text="Delivery staff information not available" />
+            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lnr_delivery_staff_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:layout_marginEnd="16dp"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_your_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery Staff" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/txt_name"
+                        style="@style/txt_custom_style_large"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".7"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:padding="@dimen/space_3"
+                        android:drawableStart="@drawable/ic_delivery_man_24"
+                        android:drawablePadding="@dimen/space_5"
+                        android:text="" />
+
+
+                    <TextView
+                        android:id="@+id/txt_phone_number"
+                        style="@style/txt_custom_style_large"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@id/txt_name"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".7"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:layout_marginBottom="@dimen/space_5"
+                        android:padding="@dimen/space_3"
+                        android:drawableStart="@drawable/ic_smartphone_24"
+                        android:drawablePadding="@dimen/space_5"
+                        android:text="" />
+
+
+                    <ImageView
+                        android:id="@+id/img_call"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="@dimen/space_16"
+                        android:layout_weight=".1"
+                        android:layout_below="@id/txt_name"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:layout_marginBottom="@dimen/space_5"
+                        android:padding="@dimen/space_3"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_phone"
+                        />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

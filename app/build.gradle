@@ -1,0 +1,624 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion '28.0.3'
+
+//    archivesBaseName = ""
+
+//      ///TODO: Change to individual shop
+    ///TODO:Step 1 - Individual shop setup (NewShopListHomeActivity)
+    ///TODO:Step 2 - App name and icon changes (Manifest)
+    ///TODO:Step 3 - Launcher Intent change  (Manifest)
+    ///TODO:Step 4 - change applicationId (like - "com.dvishapps.exampleshop")   (build.gradle)
+    ///TODO:Step 5 - versionCode and versionName change  (build.gradle)
+
+    defaultConfig {
+        applicationId "com.dvishapps.yourshop"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 41
+        versionName "2.1.38"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+    }
+
+//    ////    //Red Bowl - oldLakshmi Mess
+//    defaultConfig {
+//        applicationId "com.dvishapps.lakshmimess"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 11
+//        versionName "1.0.10"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName","Redbowl - "+ applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //  lunch box
+//    defaultConfig {
+//        applicationId "com.dvishapps.lunchbox"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 1
+//        versionName "1.0.0"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    // hotel maharaja kidavirunthu
+//    defaultConfig {
+//        applicationId "com.dvishapps.srivelanchettinadmess"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 1
+//        versionName "1.0.0"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+// shree aksshayam
+//    defaultConfig {
+//        applicationId "com.dvishapps.shreeaksshayam"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 1
+//        versionName "1.0.0"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //almass briyani house
+//    defaultConfig {
+//        applicationId "com.dvishapps.almaasbiriyanihouse"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 4
+//        versionName "1.0.3"
+//       // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//    vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //Ss hotel
+//    defaultConfig {
+//        applicationId "com.dvishapps.sshotel"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 7
+//        versionName "1.0.6"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //Haryana dhaba
+//    defaultConfig {
+//        applicationId "com.dvishapps.haryanadhabarestaurantandbakes"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 5
+//        versionName "1.0.4"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+//    //burger square
+//    defaultConfig {
+//        applicationId "com.dvishapps.burgersquare"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 4
+//        versionName "1.0.3"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //Ancient Village Restaurant
+//    defaultConfig {
+//        applicationId "com.dvishapps.ancientvillagerestaurant"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 4
+//        versionName "1.0.3"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+
+//    //M H R Biriyani house
+//    defaultConfig {
+//        applicationId "com.dvishapps.mhrbiriyanihouse"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 1
+//        versionName "1.0.0"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+
+//    //A1  Restaurant
+//    defaultConfig {
+//        applicationId "com.dvishapps.a1restaurant"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 8
+//        versionName "1.0.7"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+//    //kootansoru
+//    defaultConfig {
+//        applicationId "com.dvishapps.kootansoru"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 8
+//        versionName "1.0.7"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//
+////        renderscriptTargetApi 17
+////        renderscriptSupportModeEnabled true
+//    }
+
+
+//    //Bright Multi Services
+//    defaultConfig {
+//        applicationId "com.dvishapps.brightmultiservice"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 2
+//        versionName "1.0.1"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//    vectorDrawables.useSupportLibrary = true
+////        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//
+//    }
+
+
+////    //Chennais Biriyani House - R S Puram
+//    defaultConfig {
+//        applicationId "com.dvishapps.chennaisbriyanihouse"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 4
+//        versionName "1.0.3"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//    vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+
+//    //Hotel Yours
+//    defaultConfig {
+//        applicationId "com.dvishapps.hotelyours"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 4
+//        versionName "1.0.3"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+
+//    defaultConfig {
+//        applicationId "com.dvishapps.arusuvairestaurant"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 11
+//        versionName "1.0.10"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//
+////        renderscriptTargetApi 17
+////        renderscriptSupportModeEnabled true
+//    }
+
+
+    //   // Thandav's Multi Cuisine Restaurant
+//    defaultConfig {
+//        applicationId "com.dvishapps.thandavsmulticuisinerestaurant"
+//        minSdkVersion 19
+//        targetSdkVersion 29
+//        versionCode 1
+//        versionName "1.0.0"
+//       // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //   // Sai Samboorna Hotel
+//    defaultConfig {
+//        applicationId "com.dvishapps.saisamboornahotel"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 3
+//        versionName "1.0.2"
+//       // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//    vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //   //Gandhipuram Original Lala Sweets
+//    defaultConfig {
+//        applicationId "com.dvishapps.gandhipuramoriginallalasweets"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 4
+//        versionName "1.0.3"
+//       // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//    vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //   //Burma bhai
+//    defaultConfig {
+//        applicationId "com.dvishapps.burmabhai"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 6
+//        versionName "1.0.5"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //   //kovai president biriyani
+//    defaultConfig {
+//        applicationId "com.dvishapps.kovaipresidentbiriyani"
+//        minSdkVersion 19
+//        targetSdkVersion 29
+//        versionCode 2
+//        versionName "1.0.1"
+//       // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//    vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //   //Ifthar Multicuisine Restaurant
+//    defaultConfig {
+//        applicationId "com.dvishapps.iftharmulticuisinerestaurant"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 4
+//        versionName "1.0.3"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //   //Durai's Super Market
+//    defaultConfig {
+//        applicationId "com.dvishapps.duraissupermarket"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 2
+//        versionName "1.0.1"
+//       // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//    vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+////    Arusuvai Restaurant
+//    defaultConfig {
+//        applicationId "com.dvishapps.arusuvairestaurant"
+//        minSdkVersion 19
+//        targetSdkVersion 29
+//        versionCode 10
+//        versionName "1.0.9"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+////    Johan Sea Foods
+//    defaultConfig {
+//        applicationId "com.dvishapps.johanseafoods"
+//        minSdkVersion 19
+//        targetSdkVersion 29
+//        versionCode 1
+//        versionName "1"
+//       // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+////    Sivakannan Restaurant
+//    defaultConfig {
+//        applicationId "com.dvishapps.sivakannanrestaurant"
+//        minSdkVersion 19
+//        targetSdkVersion 29
+//        versionCode 7
+//        versionName "1.0.6"
+//       // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+////   //Blue Wave Fisheries & Chicken Stall
+//    defaultConfig {
+//        applicationId "com.dvishapps.bluewavefisheriesandchickenstall"
+//        minSdkVersion 19
+//        targetSdkVersion 29
+//        versionCode 1
+//        versionName "1"
+//       // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+//   //SRKP Chettinad Mess
+//    defaultConfig {
+//        applicationId "com.dvishapps.srkpchettinadmess"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 9
+//        versionName "1.0.8"
+//        // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+    //A1 chips
+//    defaultConfig {
+//        applicationId "com.dvishapps.a1chips"
+//        minSdkVersion 19
+//        targetSdkVersion 29
+//        versionCode 2
+//        versionName "1.0.1"
+//       // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+//   //RHR PURE VEG RESTAURANT
+//    defaultConfig {
+//        applicationId "com.dvishapps.rhrpurevegrestaurant"
+//        minSdkVersion 19
+//        targetSdkVersion 29
+//        versionCode 7
+//        versionName "1.0.6"
+//       // TODO: Change app name , app icon, change shop visibility,Main Intent
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+//    Akshaya Park Restaurant
+//    defaultConfig {
+//        applicationId "com.dvishapps.akshayaparkrestaurant"
+//        minSdkVersion 19
+//        targetSdkVersion 29
+//        versionCode 1
+//        versionName "1"
+//       // TODO: Change app name , app icon, change shop visibility(on Category top),Main Intent(Manifest)
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+//
+//    defaultConfig {
+//        applicationId "com.dvishapps.premierlakshmisupermarket"
+//        minSdkVersion 19
+//        targetSdkVersion 29
+//        versionCode 3
+//        versionName "1.0.2"
+//        //TODO: Change app name , app icon, change shop visibility(on Category top),Main Intent(Manifest)
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+//    defaultConfig {
+//        applicationId "com.dvishapps.bluewave"
+//        minSdkVersion 19
+//        targetSdkVersion 29
+//        versionCode 1
+//        versionName "1"
+//        //TODO: Change app name , app icon, change shop visibility on category fragment,Main Intent on Manifest
+//        //TODO: remove default user before publish
+//        multiDexEnabled true
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //vectorDrawables.useSupportLibrary = true
+//        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+//    }
+
+
+    lintOptions {
+        abortOnError false
+        disable "Instantiatable"
+    }
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    repositories {
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+//    implementation 'com.android.support:appcompat-v7:23.1.1'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.navigation:navigation-fragment:2.2.2'
+    implementation 'androidx.navigation:navigation-ui:2.2.2'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.4inodev:Neomorphic-FrameLayout-Android:1.03'
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+//    implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.3.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'com.stepstone.stepper:material-stepper:4.3.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'jp.wasabeef:picasso-transformations:2.1.0'
+    implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+//    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    implementation 'com.journeyapps:zxing-android-embedded:4.1.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation "com.google.android.libraries.places:places:2.3.0"
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+
+    implementation 'com.seatgeek:placesautocomplete:0.3-SNAPSHOT'
+    implementation 'com.android.support:multidex:1.0.3'
+
+
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation project(path: ':zbar')
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'info.hoang8f:android-segmented:1.0.6'
+
+    implementation 'com.razorpay:checkout:1.5.16'
+    implementation platform('com.google.firebase:firebase-bom:26.1.1')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-inappmessaging-display'
+    implementation 'com.google.firebase:firebase-inappmessaging'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-messaging-directboot'
+    implementation 'com.airbnb.android:lottie:3.4.2'
+//    implementation 'com.google.firebase:firebase-messaging:20.2.4'
+
+    implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
+    implementation 'com.github.jrvansuita:GaussianBlur:1.0.3'
+    implementation 'com.google.maps.android:android-maps-utils:0.6.2'
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
+    implementation 'com.github.rubensousa:gravitysnaphelper:2.0'
+
+    implementation 'com.google.android.gms:play-services-base:17.5.0'
+    implementation 'com.github.judemanutd:autostarter:1.0.8'
+    implementation 'androidx.work:work-runtime:2.4.0'
+}
+apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'  // Google Services plugin

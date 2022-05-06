@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.dvishapps.yourshop.ui.viewModel.UserViewModel" />
+
+        <variable
+            name="user"
+            type="com.dvishapps.yourshop.models.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/informationTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="@string/verify_phone__information"
+                android:textAlignment="center"
+                android:textColor="@color/md_white_1000"
+                android:textSize="@dimen/font_title_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{user.user_email}"
+                android:textAlignment="center"
+                android:textColor="@color/md_white_1000"
+                android:textSize="@dimen/font_title_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/informationTextView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imageView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/image_default__image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_very_email_icon" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/code_"
+            style="@style/md_input"
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_52"
+            android:layout_marginStart="@dimen/space_8"
+            android:layout_marginTop="@dimen/space_44"
+            android:layout_marginEnd="@dimen/space_8"
+            android:hint="@string/verify_email__enter_code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView31"
+            app:startIconDrawable="@drawable/baseline_lock">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:text="@={viewModel.code}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:id="@+id/view19"
+           android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/md_grey_400"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/submitButton" />
+
+        <TextView
+            android:id="@+id/change_email"
+            style="@style/txt_input_outline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_8"
+            android:layout_marginTop="@dimen/space_8"
+            android:paddingStart="@dimen/space_16"
+            android:paddingTop="@dimen/space_8"
+            android:paddingEnd="@dimen/space_16"
+            android:paddingBottom="@dimen/space_8"
+            android:text="@string/verify_email__change_phone"
+            android:textAllCaps="false"
+            android:textColor="@color/orangeBackground"
+            android:textSize="@dimen/font_body_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view19" />
+
+        <TextView
+            android:id="@+id/resent_code"
+            style="@style/txt_input_outline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginEnd="@dimen/space_8"
+            android:onClick="@{()->viewModel.resentCode(user.user_email)}"
+            android:paddingStart="@dimen/space_16"
+            android:paddingTop="@dimen/space_8"
+            android:paddingEnd="@dimen/space_16"
+            android:paddingBottom="@dimen/space_8"
+            android:text="@string/verify_email__resent_code"
+            android:textColor="@color/orangeBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view19" />
+
+        <Button
+            android:id="@+id/submitButton"
+            style="@style/md_input"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/space_8"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginEnd="@dimen/space_8"
+            android:background="@drawable/radius"
+            android:onClick="@{()-> viewModel.verify(user.user_id)}"
+            android:text="@string/verify_email__submit"
+            android:textColor="@color/md_white_1000"
+            android:textSize="@dimen/font_body_lg_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/code_" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

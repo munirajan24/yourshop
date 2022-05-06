@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:id="@+id/alert_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_40"
+            android:layout_weight=".2"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:padding="@dimen/space_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_24"
+                android:layout_weight=".2"
+                android:src="@drawable/baseline_confirm_white_24" />
+
+            <TextView
+                android:id="@+id/alert_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/comment__empty_comment"
+                android:textColor="@color/ms_white"
+                android:textSize="@dimen/font_h7_size"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/alert_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:background="@color/md_white_1000"
+            android:padding="@dimen/space_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alert_header">
+
+            <TextView
+                android:id="@+id/alert_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:paddingEnd="@dimen/space_4"
+                android:text=""
+                android:textColor="@color/ms_black_87_opacity"
+                android:textSize="@dimen/font_title_size"
+                tools:ignore="RtlSymmetry" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/alert_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/space_16"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alert_content"
+            tools:ignore="RtlHardcoded,RtlSymmetry">
+
+            <Button
+                android:id="@+id/alert_yes"
+                style="@style/input_outline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="@string/password_change__save"
+                android:textColor="@color/sl_green_dark"
+                android:textSize="@dimen/button__text_size" />
+
+            <Button
+                android:id="@+id/alert_no"
+                style="@style/input_outline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Cancel"
+                android:textColor="@color/md_red_A200"
+                android:textSize="@dimen/button__text_size" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        >
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        style="@style/Neomorph_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".9"
+        android:layout_margin="@dimen/space_1">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="100dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".6"
+                android:background="@drawable/radius">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/pImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/space_2"
+                    android:background="@color/shimmer_grey"
+                    android:scaleType="centerCrop"
+                     />
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight=".4"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_checkout_item_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/ms_black_87_opacity"
+                    android:textSize="@dimen/font_body_lg_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_checkout_item_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="@dimen/space_2"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/font_title_size"
+                    android:textColor="@color/md_grey_800"
+                    android:paddingTop="@dimen/space_2"
+                    android:paddingBottom="@dimen/space_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkout_item_name" />
+
+
+            </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:padding="@dimen/space_4">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/checkout_item_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/shimmer_grey"
+                    android:textSize="@dimen/font_body_lg_size"
+                    android:background="@color/shimmer_grey"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/checkout_item_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="@dimen/space_2"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/font_title_size"
+
+                    android:background="@color/shimmer_grey"
+                    android:textColor="@color/md_grey_800"
+                    android:paddingTop="@dimen/space_5"
+                    android:paddingBottom="@dimen/space_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkout_item_name" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/space_8"
+                    android:paddingTop="@dimen/space_5"
+                    android:paddingEnd="@dimen/space_8"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkout_item_desc">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_p_item_add_action"
+                        style="@style/orange_btn_1"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:drawableStart="@drawable/ic_action_add"
+                        android:text="@string/Add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:weightSum="3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/btn_checkout_item_action_minus"
+                            style="@style/orange_btn_1"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/space_28"
+                            android:layout_gravity="center"
+                            android:layout_weight=".85"
+                            android:contentDescription="@string/image_default_image"
+                            app:srcCompat="@drawable/ic_remove"
+                            tools:ignore="NestedWeights" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/btn_checkout_item_action_qty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@color/ms_black"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/btn_checkout_item_action_add"
+                            style="@style/orange_btn_1"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/space_28"
+                            android:layout_weight=".85"
+                            android:contentDescription="@string/image_default_image"
+                            app:srcCompat="@drawable/ic_action_add" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"
+            android:layout_marginEnd="@dimen/space_3"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                >
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/p_item_add_action"
+                    style="@style/danger_btn_4_vertical"
+                    app:cornerRadius="@dimen/space_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:weightSum="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/checkout_item_action_add"
+                    style="@style/danger_btn_3_vertical"
+                    app:cornerRadius="@dimen/space_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_28"
+                    android:layout_weight=".85"
+                    android:contentDescription="@string/image_default_image"
+                    app:srcCompat="@drawable/ic_action_add" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/checkout_item_action_qty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:lines="1"
+                    android:maxLength="4"
+                    android:gravity="center"
+                    android:textColor="@color/ms_black"
+                    android:textStyle="bold" />
+
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/checkout_item_action_minus"
+                    style="@style/danger_btn_2_vertical"
+                    app:cornerRadius="@dimen/space_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_28"
+                    android:layout_gravity="center"
+                    android:layout_weight=".85"
+                    android:contentDescription="@string/image_default_image"
+                    app:srcCompat="@drawable/ic_remove"
+                    tools:ignore="NestedWeights" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.dvishapps.yourshop.utils.StringUtil" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="width"
+            type="int" />
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="height"
+            type="int" />
+
+        <variable
+            name="img_width"
+            type="Integer" />
+
+        <variable
+            name="img_height"
+            type="Integer" />
+
+        <variable
+            name="listener"
+            type="com.dvishapps.yourshop.ui.interfaces.OnRecycleListener" />
+
+        <variable
+            name="item"
+            type="com.dvishapps.yourshop.models.RecycleItem" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_1"
+        android:backgroundTint="@color/md_grey_100"
+        android:custom_height="@{height}"
+        android:custom_width="@{width}"
+        android:elevation="0dp"
+        app:cardCornerRadius="@dimen/space_8">
+
+        <LinearLayout
+            android:id="@+id/lnr_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="@{() -> listener.onItemClick(item,position)}"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/space_4"
+            android:paddingBottom="@dimen/space_4">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cate_img"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/circle"
+                android:contentDescription="@string/image_default_image"
+                android:custom_height="@{img_height}"
+                android:custom_width="@{img_width}"
+                android:src="@drawable/default_image" />
+
+
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
